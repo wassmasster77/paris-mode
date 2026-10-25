@@ -77,11 +77,20 @@
                     <div>
                         <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم الفرعي)</label>
                         <select id="admin-dept" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                            <!-- الأقسام النسائية -->
                             <option value="handbags" id="opt-handbags">👜 قسم الشناتي النسائية (Handbags)</option>
                             <option value="shoes" id="opt-shoes">👠 قسم الأحذية النسائية (Women's Shoes)</option>
                             <option value="pants" id="opt-pants">👖 قسم البناطيل النسائية (Women's Pants)</option>
                             <option value="lingerie" id="opt-lingerie">✨ قسم اللانجري النسائي (Lingerie)</option>
-                            <option value="men" id="opt-men">👔 القسم الرجالي (Men's Section)</option>
+                            
+                            <!-- الأقسام الرجالية الجديدة -->
+                            <option value="men_jackets" id="opt-men-jackets">🧥 قسم الجاكيتات الرجالية (Men's Jackets)</option>
+                            <option value="men_tshirts" id="opt-men-tshirts">👕 قسم التيشيرتات الرجالية (Men's T-Shirts)</option>
+                            <option value="men_pants" id="opt-men-pants">👖 قسم البناطيل الرجالية (Men's Pants)</option>
+                            <option value="men_shoes" id="opt-men-shoes">👞 قسم الأحذية الرجالية (Men's Shoes)</option>
+                            <option value="men_accessories" id="opt-men-accessories">🕶️ قسم الإكسسوارات الرجالية (Men's Accessories)</option>
+
+                            <!-- أقسام الإلكترونيات والأجهزة -->
                             <option value="appliances" id="opt-appliances">🏠 الأجهزة المنزلية (Home Appliances)</option>
                             <option value="mobiles" id="opt-mobiles">📱 الموبايلات واللابتوبات (Mobiles & Laptops)</option>
                         </select>
@@ -135,14 +144,14 @@
             </div>
         </div>
 
-        <!-- عرض 1: المعرض الرئيسي لجميع الأقسام الفرعية -->
+        <!-- عرض 1: المعرض الرئيسي لجميع الأقسام الفرعية المفصلة -->
         <div id="gallery-view" class="space-y-16">
             <div class="text-center mb-6 space-y-3">
                 <h1 id="store-main-title" class="text-4xl font-black text-white">paris-mode Store</h1>
                 <p id="store-main-desc" class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view details, photos, and video reviews.</p>
             </div>
 
-            <!-- 1. قسم الشناتي النسائية -->
+            <!-- الأقسام النسائية -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-handbags-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👜</span> Handbags Collection</h2>
@@ -150,7 +159,6 @@
                 <div id="grid-handbags" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 2. قسم الأحذية النسائية -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👠</span> Women's Shoes</h2>
@@ -158,7 +166,6 @@
                 <div id="grid-shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 3. قسم البناطيل النسائية -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-pants-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👖</span> Women's Pants</h2>
@@ -166,7 +173,6 @@
                 <div id="grid-pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 4. قسم اللانجري النسائي -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400 flex items-center gap-2"><span>✨</span> Women's Lingerie Collection</h2>
@@ -174,15 +180,43 @@
                 <div id="grid-lingerie" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 5. القسم الرجالي -->
+            <!-- الأقسام الرجالية الجديدة -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👔</span> Men's Section</h2>
+                    <h2 id="sec-men-jackets-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>🧥</span> Men's Jackets</h2>
                 </div>
-                <div id="grid-men" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="grid-men_jackets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 6. قسم الأجهزة المنزلية -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👕</span> Men's T-Shirts</h2>
+                </div>
+                <div id="grid-men_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-men-pants-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👖</span> Men's Pants</h2>
+                </div>
+                <div id="grid-men_pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-men-shoes-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👞</span> Men's Shoes</h2>
+                </div>
+                <div id="grid-men_shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-men-accessories-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>🕶️</span> Men's Accessories</h2>
+                </div>
+                <div id="grid-men_accessories" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- أقسام الإلكترونيات والأجهزة -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-appliances-title" class="text-2xl font-bold text-teal-400 flex items-center gap-2"><span>🏠</span> Home Appliances</h2>
@@ -190,7 +224,6 @@
                 <div id="grid-appliances" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 7. قسم الموبايلات واللابتوبات -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-mobiles-title" class="text-2xl font-bold text-cyan-400 flex items-center gap-2"><span>📱</span> Mobiles & Laptops</h2>
@@ -351,16 +384,68 @@
                     link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
                 }
             ],
-            men: [
+            men_jackets: [
                 {
-                    title: "Men's Classic Jacket",
+                    title: "Men's Classic Winter Jacket",
                     images: [
                         'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'
+                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60'
                     ],
                     video: 'https://fr.shein.com/p-568031556.html',
-                    specs: 'Sophisticated and practical menswear for daily outings and winter seasons.',
+                    specs: 'Sophisticated and practical men jacket for daily outings and winter seasons.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ],
+            men_tshirts: [
+                {
+                    title: "Men's Casual Cotton T-Shirt",
+                    images: [
+                        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: '100% breathable cotton t-shirt designed for everyday modern comfort.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ],
+            men_pants: [
+                {
+                    title: "Men's Classic Casual Pants",
+                    images: [
+                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Stylish and durable trousers tailored for formal and informal looks.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ],
+            men_shoes: [
+                {
+                    title: "Men's Luxury Leather Shoes",
+                    images: [
+                        'https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'High-end craftsmanship offering ultimate comfort and sophisticated style.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ],
+            men_accessories: [
+                {
+                    title: "Men's Luxury Watch & Accessories",
+                    images: [
+                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Precision watch and matching accessories for the modern gentleman.',
                     link: 'https://fr.shein.com/p-568031556.html'
                 }
             ],
@@ -402,7 +487,11 @@
                 optShoes: "Women's Shoes",
                 optPants: "Women's Pants",
                 optLingerie: "Women's Lingerie Collection",
-                optMen: "Men's Section",
+                optMenJackets: "Men's Jackets",
+                optMenTshirts: "Men's T-Shirts",
+                optMenPants: "Men's Pants",
+                optMenShoes: "Men's Shoes",
+                optMenAccessories: "Men's Accessories",
                 optAppliances: 'Home Appliances',
                 optMobiles: 'Mobiles & Laptops',
                 lblTitle: 'Product Title',
@@ -420,7 +509,11 @@
                 secShoes: "Women's Shoes",
                 secPants: "Women's Pants",
                 secLingerie: "Women's Lingerie Collection",
-                secMen: "Men's Section",
+                secMenJackets: "Men's Jackets",
+                secMenTshirts: "Men's T-Shirts",
+                secMenPants: "Men's Pants",
+                secMenShoes: "Men's Shoes",
+                secMenAccessories: "Men's Accessories",
                 secAppliances: 'Home Appliances',
                 secMobiles: 'Mobiles & Laptops',
                 btnDetails: 'Details',
@@ -447,7 +540,11 @@
                 optShoes: 'قسم الأحذية النسائية',
                 optPants: 'قسم البناطيل النسائية',
                 optLingerie: 'قسم اللانجري النسائي',
-                optMen: 'القسم الرجالي',
+                optMenJackets: 'قسم الجاكيتات الرجالية',
+                optMenTshirts: 'قسم التيشيرتات الرجالية',
+                optMenPants: 'قسم البناطيل الرجالية',
+                optMenShoes: 'قسم الأحذية الرجالية',
+                optMenAccessories: 'قسم الإكسسوارات الرجالية',
                 optAppliances: 'قسم الأجهزة المنزلية',
                 optMobiles: 'قسم الموبايلات واللابتوبات',
                 lblTitle: 'عنوان المنتج',
@@ -465,7 +562,11 @@
                 secShoes: 'قسم الأحذية النسائية',
                 secPants: 'قسم البناطيل النسائية',
                 secLingerie: 'قسم اللانجري النسائي',
-                secMen: 'القسم الرجالي',
+                secMenJackets: 'قسم الجاكيتات الرجالية',
+                secMenTshirts: 'قسم التيشيرتات الرجالية',
+                secMenPants: 'قسم البناطيل الرجالية',
+                secMenShoes: 'قسم الأحذية الرجالية',
+                secMenAccessories: 'قسم الإكسسوارات الرجالية',
                 secAppliances: 'قسم الأجهزة المنزلية',
                 secMobiles: 'قسم الموبايلات واللابتوبات',
                 btnDetails: 'التفاصيل',
@@ -492,7 +593,11 @@
                 optShoes: 'Chaussures pour femmes',
                 optPants: 'Pantalons pour femmes',
                 optLingerie: 'Collection Lingerie',
-                optMen: 'Section Hommes',
+                optMenJackets: 'Vestes pour hommes',
+                optMenTshirts: 'T-shirts pour hommes',
+                optMenPants: 'Pantalons pour hommes',
+                optMenShoes: 'Chaussures pour hommes',
+                optMenAccessories: 'Accessoires pour hommes',
                 optAppliances: 'Appareils ménagers',
                 optMobiles: 'Mobiles et ordinateurs portables',
                 lblTitle: 'Titre du produit',
@@ -510,7 +615,11 @@
                 secShoes: 'Chaussures pour femmes',
                 secPants: 'Pantalons pour femmes',
                 secLingerie: 'Collection Lingerie',
-                secMen: 'Section Hommes',
+                secMenJackets: 'Vestes pour hommes',
+                secMenTshirts: 'T-shirts pour hommes',
+                secMenPants: 'Pantalons pour hommes',
+                secMenShoes: 'Chaussures pour hommes',
+                secMenAccessories: 'Accessoires pour hommes',
                 secAppliances: 'Appareils ménagers',
                 secMobiles: 'Mobiles et ordinateurs portables',
                 btnDetails: 'Détails',
@@ -537,7 +646,11 @@
                 optShoes: 'Damen-Schuhe',
                 optPants: 'Damen-Hosen',
                 optLingerie: 'Damen-Lingerie-Kollektion',
-                optMen: 'Herrenbereich',
+                optMenJackets: 'Herren-Jacken',
+                optMenTshirts: 'Herren-T-Shirts',
+                optMenPants: 'Herren-Hosen',
+                optMenShoes: 'Herren-Schuhe',
+                optMenAccessories: 'Herren-Accessoires',
                 optAppliances: 'Haushaltsgeräte',
                 optMobiles: 'Handys & Laptops',
                 lblTitle: 'Produkttitel',
@@ -555,7 +668,11 @@
                 secShoes: 'Damen-Schuhe',
                 secPants: 'Damen-Hosen',
                 secLingerie: 'Damen-Lingerie-Kollektion',
-                secMen: 'Herrenbereich',
+                secMenJackets: 'Herren-Jacken',
+                secMenTshirts: 'Herren-T-Shirts',
+                secMenPants: 'Herren-Hosen',
+                secMenShoes: 'Herren-Schuhe',
+                secMenAccessories: 'Herren-Accessoires',
                 secAppliances: 'Haushaltsgeräte',
                 secMobiles: 'Handys & Laptops',
                 btnDetails: 'Details',
@@ -582,7 +699,11 @@
                 optShoes: 'Dames Schoenen',
                 optPants: 'Dames Broeken',
                 optLingerie: 'Dames Lingerie Collectie',
-                optMen: 'Herensectie',
+                optMenJackets: 'Heren Jassen',
+                optMenTshirts: 'Heren T-Shirts',
+                optMenPants: 'Heren Broeken',
+                optMenShoes: 'Heren Schoenen',
+                optMenAccessories: 'Heren Accessoires',
                 optAppliances: 'Huishoudelijke Apparaten',
                 optMobiles: 'Mobieltjes & Laptops',
                 lblTitle: 'Producttitel',
@@ -600,7 +721,11 @@
                 secShoes: 'Dames Schoenen',
                 secPants: 'Dames Broeken',
                 secLingerie: 'Dames Lingerie Collectie',
-                secMen: 'Herensectie',
+                secMenJackets: 'Heren Jassen',
+                secMenTshirts: 'Heren T-Shirts',
+                secMenPants: 'Heren Broeken',
+                secMenShoes: 'Heren Schoenen',
+                secMenAccessories: 'Heren Accessoires',
                 secAppliances: 'Huishoudelijke Apparaten',
                 secMobiles: 'Mobieltjes & Laptops',
                 btnDetails: 'Details',
@@ -633,7 +758,11 @@
             document.getElementById('opt-shoes').innerText = t.optShoes;
             document.getElementById('opt-pants').innerText = t.optPants;
             document.getElementById('opt-lingerie').innerText = t.optLingerie;
-            document.getElementById('opt-men').innerText = t.optMen;
+            document.getElementById('opt-men-jackets').innerText = t.optMenJackets;
+            document.getElementById('opt-men-tshirts').innerText = t.optMenTshirts;
+            document.getElementById('opt-men-pants').innerText = t.optMenPants;
+            document.getElementById('opt-men-shoes').innerText = t.optMenShoes;
+            document.getElementById('opt-men-accessories').innerText = t.optMenAccessories;
             document.getElementById('opt-appliances').innerText = t.optAppliances;
             document.getElementById('opt-mobiles').innerText = t.optMobiles;
 
@@ -653,7 +782,11 @@
             document.getElementById('sec-shoes-title').innerHTML = `<span>👠</span> ${t.secShoes}`;
             document.getElementById('sec-pants-title').innerHTML = `<span>👖</span> ${t.secPants}`;
             document.getElementById('sec-lingerie-title').innerHTML = `<span>✨</span> ${t.secLingerie}`;
-            document.getElementById('sec-men-title').innerHTML = `<span>👔</span> ${t.secMen}`;
+            document.getElementById('sec-men-jackets-title').innerHTML = `<span>🧥</span> ${t.secMenJackets}`;
+            document.getElementById('sec-men-tshirts-title').innerHTML = `<span>👕</span> ${t.secMenTshirts}`;
+            document.getElementById('sec-men-pants-title').innerHTML = `<span>👖</span> ${t.secMenPants}`;
+            document.getElementById('sec-men-shoes-title').innerHTML = `<span>👞</span> ${t.secMenShoes}`;
+            document.getElementById('sec-men-accessories-title').innerHTML = `<span>🕶️</span> ${t.secMenAccessories}`;
             document.getElementById('sec-appliances-title').innerHTML = `<span>🏠</span> ${t.secAppliances}`;
             document.getElementById('sec-mobiles-title').innerHTML = `<span>📱</span> ${t.secMobiles}`;
 
@@ -765,13 +898,18 @@
             renderGrid('shoes', 'grid-shoes', t.viewText, t.btnDetails);
             renderGrid('pants', 'grid-pants', t.viewText, t.btnDetails);
             renderGrid('lingerie', 'grid-lingerie', t.viewText, t.btnDetails);
-            renderGrid('men', 'grid-men', t.viewText, t.btnDetails);
+            renderGrid('men_jackets', 'grid-men_jackets', t.viewText, t.btnDetails);
+            renderGrid('men_tshirts', 'grid-men_tshirts', t.viewText, t.btnDetails);
+            renderGrid('men_pants', 'grid-men_pants', t.viewText, t.btnDetails);
+            renderGrid('men_shoes', 'grid-men_shoes', t.viewText, t.btnDetails);
+            renderGrid('men_accessories', 'grid-men_accessories', t.viewText, t.btnDetails);
             renderGrid('appliances', 'grid-appliances', t.viewText, t.btnDetails);
             renderGrid('mobiles', 'grid-mobiles', t.viewText, t.btnDetails);
         }
 
         function renderGrid(deptKey, gridId, viewText, detailsText) {
             const grid = document.getElementById(gridId);
+            if(!grid) return;
             grid.innerHTML = '';
             storeData[deptKey].forEach((p, index) => {
                 grid.innerHTML += `
