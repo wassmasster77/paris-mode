@@ -64,53 +64,75 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-7xl mx-auto px-4 py-10 space-y-12">
 
-        <!-- لوحة التحكم الإدارية لإضافة منتج جديد بسهولة (اسم، وصف، 3 صور، فيديو، رابط أفلييت) -->
-        <div class="bg-slate-900 border-2 border-indigo-500/40 rounded-3xl p-6 md:p-8 shadow-2xl space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2"><span>⚙️</span> Admin Product Creator (لوحة إضافة منتج جديد)</h3>
-                <span class="text-xs bg-indigo-600/30 text-indigo-300 px-3 py-1 rounded-full font-semibold">Easy Form</span>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Product Name (اسم المنتج):</label>
-                    <input type="text" id="admin-title" placeholder="e.g. Luxury Handbag" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Affiliate Link / Shop Now (رابط الأفلييت):</label>
-                    <input type="text" id="admin-link" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                </div>
+        <!-- لوحة التحكم الاحترافية لإضافة المنتجات (مطابقة لتصميمك) -->
+        <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
+            <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> إضافة منتج جديد (Product Creator Dashboard)</h3>
+                <span class="text-xs bg-indigo-600 text-white px-3 py-1 rounded-lg font-semibold">Admin Panel</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Image 1 URL (رابط الصورة الأولى):</label>
-                    <input type="text" id="admin-img1" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- الجانب الأيسر/الوسط: حقول الإدخال (العنوان، الوصف، الرابط، المواصفات) -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1">العنوان (Product Title)</label>
+                        <input type="text" id="admin-title" placeholder="أخبر الجميع عن قصة منشورك أو منتجك..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1">الوصف (Description & Specs)</label>
+                        <textarea id="admin-specs" rows="3" placeholder="صفقة منشورك أو تفاصيل المنتج الدقيقة..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1">رابط الأفلييت / تسوق الآن (Affiliate Link)</label>
+                        <input type="text" id="admin-link" placeholder="إضافة رابط التسويق بالعمولة هنا..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1">رابط فيديو المنتج (YouTube Embed URL)</label>
+                        <input type="text" id="admin-video" placeholder="https://www.youtube.com/embed/..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Image 2 URL (رابط الصورة الثانية):</label>
-                    <input type="text" id="admin-img2" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+
+                <!-- الجانب الأيمن: صندوق رفع الوسائط (تحميل الصور من جهازك) -->
+                <div class="lg:col-span-5 space-y-4">
+                    <label class="block text-xs font-bold text-slate-400 mb-1">تحميل الوسائط (اختر 3 صور للمنتج من جهازك)</label>
+                    
+                    <div class="border-2 border-dashed border-slate-700 bg-slate-800/50 hover:bg-slate-800 rounded-3xl p-8 text-center cursor-pointer transition flex flex-col items-center justify-center space-y-3 relative" onclick="document.getElementById('file-input').click()">
+                        <div class="w-14 h-14 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            🖼️
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm font-bold text-white">انقر لتحميل الوسائط أو ارفع حتى 3 صور</p>
+                            <p class="text-xs text-slate-400">PNG و JPG حتى 20 ميجابايت</p>
+                        </div>
+                        <!-- حقل رفع الملفات المخفي -->
+                        <input type="file" id="file-input" multiple accept="image/*" class="hidden" onchange="handleFiles(this)">
+                    </div>
+
+                    <!-- معاينة الصور المرفوعة -->
+                    <div id="preview-container" class="grid grid-cols-3 gap-2 hidden">
+                        <div class="h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
+                            <img id="prev-0" src="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
+                            <img id="prev-1" src="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
+                            <img id="prev-2" src="" class="w-full h-full object-cover">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Image 3 URL (رابط الصورة الثالثة):</label>
-                    <input type="text" id="admin-img3" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                </div>
+
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Video Embed URL (رابط الفيديو - يوتيوب):</label>
-                    <input type="text" id="admin-video" placeholder="https://www.youtube.com/embed/..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Specifications (المواصفات والوصف):</label>
-                    <input type="text" id="admin-specs" placeholder="Detailed product specifications..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                </div>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+                <button onclick="addNewProduct()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2">
+                    <span>✨</span> نشر المنتج في المتجر (Publish Product)
+                </button>
             </div>
-
-            <button onclick="addNewProduct()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition shadow-lg text-sm">
-                + Publish Product to Store (نشر المنتج في المتجر فوراً)
-            </button>
         </div>
 
         <!-- عرض 1: شبكة قسم الشناتي (Gallery View) -->
@@ -120,15 +142,15 @@
                 <p class="text-slate-400 text-sm max-w-lg mx-auto">Explore our curated collection. Click any bag to view details, 3 photos, video reviews, and shop via affiliate links.</p>
             </div>
 
-            <!-- شبكة المنتجات (تتحدث ديناميكياً) -->
+            <!-- شبكة المنتجات -->
             <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- المنتجات تضاف هنا تلقائياً -->
             </div>
         </div>
 
-        <!-- عرض 2: صفحة تفاصيل المنتج الفردي (Product Detail View - مخفية افتراضياً) -->
+        <!-- عرض 2: صفحة تفاصيل المنتج الفردي (Product Detail View) -->
         <div id="product-detail-view" class="hidden space-y-8">
-            <button onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2 rounded-xl text-sm font-bold transition flex items-center gap-2">
+            <button onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">
                 ← Back to Gallery (العودة للقسم)
             </button>
 
@@ -153,12 +175,12 @@
                     </div>
                 </div>
 
-                <!-- تفاصيل المنتج والمواصفات والأزرار والتفاعل -->
+                <!-- تفاصيل المنتج والمواصفات والأزرار -->
                 <div class="space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
                         <h1 id="detail-title" class="text-3xl sm:text-4xl font-black text-white"></h1>
                         
-                        <!-- زر الإعجاب (Like) -->
+                        <!-- زر الإعجاب -->
                         <div class="flex items-center gap-3">
                             <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-4 py-2 rounded-xl text-sm font-bold transition border border-slate-700 flex items-center gap-2">
                                 <span>❤️</span> <span id="like-text">Like (إعجاب)</span> <span id="like-count" class="bg-slate-900 px-2 py-0.5 rounded-lg text-xs">24</span>
@@ -183,7 +205,7 @@
                 </div>
             </div>
 
-            <!-- قسم التعليقات والآراء -->
+            <!-- قسم التعليقات -->
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
                 <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>💬</span> Customer Reviews & Comments (آراء العملاء)</h3>
                 <div class="space-y-3">
@@ -232,9 +254,10 @@
         </div>
     </footer>
 
-    <!-- سكربت إدارة المنتجات الديناميكي -->
+    <!-- سكربت إدارة الرفع والمنتجات -->
     <script>
-        // قائمة المنتجات الأولية
+        let uploadedImages = [];
+
         let products = [
             {
                 title: 'Luxury Parisian Leather Handbag',
@@ -248,6 +271,24 @@
                 link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
             }
         ];
+
+        function handleFiles(input) {
+            uploadedImages = [];
+            if (input.files) {
+                const filesCount = Math.min(input.files.length, 3);
+                const container = document.getElementById('preview-container');
+                container.classList.remove('hidden');
+
+                for (let i = 0; i < filesCount; i++) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        uploadedImages.push(e.target.result);
+                        document.getElementById('prev-' + i).src = e.target.result;
+                    }
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+        }
 
         function renderProducts() {
             const grid = document.getElementById('products-grid');
@@ -276,39 +317,41 @@
         function addNewProduct() {
             const title = document.getElementById('admin-title').value;
             const link = document.getElementById('admin-link').value;
-            const img1 = document.getElementById('admin-img1').value;
-            const img2 = document.getElementById('admin-img2').value;
-            const img3 = document.getElementById('admin-img3').value;
             const video = document.getElementById('admin-video').value;
             const specs = document.getElementById('admin-specs').value;
 
-            if(!title || !link || !img1) {
-                alert('Please fill at least Product Name, Affiliate Link, and Image 1 URL! (يرجى إدخال الاسم، رابط الأفلييت، ورابط الصورة الأولى على الأقل)');
+            if(!title || !link || uploadedImages.length === 0) {
+                alert('الرجاء إدخال العنوان، رابط الأفلييت، ورفع صورة واحدة على الأقل من جهازك!');
                 return;
+            }
+
+            // إكمال الصور الناقصة إن وجدت من الصورة الأولى
+            while(uploadedImages.length < 3) {
+                uploadedImages.push(uploadedImages[0]);
             }
 
             const newProd = {
                 title: title,
-                images: [img1, img2 || img1, img3 || img1],
+                images: [...uploadedImages],
                 video: video || 'https://www.youtube.com/embed/dQw4w9WgXcQ',
                 specs: specs || 'High quality trendy fashion item.',
                 link: link
             };
 
-            products.unshift(newProd); // يضيف المنتج الجديد في المقدمة
+            products.unshift(newProd);
             renderProducts();
             goHome();
 
-            // تفريغ الحقول
+            // تفريغ الحقول والصور
             document.getElementById('admin-title').value = '';
             document.getElementById('admin-link').value = '';
-            document.getElementById('admin-img1').value = '';
-            document.getElementById('admin-img2').value = '';
-            document.getElementById('admin-img3').value = '';
             document.getElementById('admin-video').value = '';
             document.getElementById('admin-specs').value = '';
+            document.getElementById('file-input').value = '';
+            document.getElementById('preview-container').classList.add('hidden');
+            uploadedImages = [];
 
-            alert('تم نشر المنتج بنجاح في المتجر! Product published successfully.');
+            alert('تم نشر المنتج بنجاح في المتجر!');
         }
 
         function openProduct(index) {
@@ -388,7 +431,6 @@
             document.getElementById('top-banner').innerText = translations[lang].banner;
         }
 
-        // تشغيل عرض المنتجات عند تحميل الصفحة
         renderProducts();
     </script>
 </body>
