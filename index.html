@@ -67,59 +67,57 @@
         <!-- لوحة التحكم الإدارية لجميع الأقسام -->
         <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
             <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> إضافة منتج لأي قسم (Multi-Department Creator)</h3>
+                <h3 id="admin-panel-title" class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> Multi-Department Creator (لوحة إدارة المنتجات)</h3>
                 <span class="text-xs bg-indigo-600 text-white px-3 py-1 rounded-lg font-semibold">Admin Panel</span>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- الجانب الأيسر: حقول النصوص واختيار القسم -->
                 <div class="lg:col-span-6 space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1">اختر القسم (Select Department)</label>
+                        <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم)</label>
                         <select id="admin-dept" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
-                            <option value="women">👗 القسم النسائي والشناتي (Women & Handbags)</option>
-                            <option value="lingerie">✨ اللانجري النسائي (Women's Lingerie)</option>
-                            <option value="men">👔 القسم الرجالي (Men's Section)</option>
-                            <option value="tech">🔌 الإلكترونيات والأجهزة (Electronics)</option>
+                            <option value="women" id="opt-women">👗 Women's Section & Handbags</option>
+                            <option value="lingerie" id="opt-lingerie">✨ Women's Lingerie Collection</option>
+                            <option value="men" id="opt-men">👔 Men's Section</option>
+                            <option value="tech" id="opt-tech">🔌 Electronics & Gadgets</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1">العنوان (Product Title)</label>
-                        <input type="text" id="admin-title" placeholder="اسم المنتج..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <label id="lbl-title" class="block text-xs font-bold text-slate-400 mb-1">Product Title (عنوان المنتج)</label>
+                        <input type="text" id="admin-title" placeholder="Product name..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1">الوصف والمواصفات (Description & Specs)</label>
-                        <textarea id="admin-specs" rows="2" placeholder="تفاصيل المنتج والدقة..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
+                        <label id="lbl-specs" class="block text-xs font-bold text-slate-400 mb-1">Description & Specs (المواصفات)</label>
+                        <textarea id="admin-specs" rows="2" placeholder="Product details..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1">رابط الأفلييت / تسوق الآن (Affiliate Link)</label>
-                        <input type="text" id="admin-link" placeholder="رابط التسويق بالعمولة..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <label id="lbl-link" class="block text-xs font-bold text-slate-400 mb-1">Affiliate Link (رابط التسويق بالعمولة)</label>
+                        <input type="text" id="admin-link" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
                 </div>
 
-                <!-- الجانب الأيمن: رفع الصور الثلاث والفيديو -->
                 <div class="lg:col-span-6 space-y-4 bg-slate-800/40 p-5 rounded-3xl border border-slate-800">
-                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-3">رفع الوسائط (Media Upload):</h4>
+                    <h4 id="lbl-media" class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-3">Media Upload (رفع الوسائط):</h4>
                     
                     <div class="space-y-3">
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
-                            <span class="text-xs font-bold text-white">📷 الصورة الرئيسية 1</span>
+                            <span id="lbl-img1" class="text-xs font-bold text-white">📷 Main Image 1</span>
                             <input type="file" id="img1-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white cursor-pointer">
                         </div>
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
-                            <span class="text-xs font-bold text-white">📸 الصورة الثانية 2</span>
+                            <span id="lbl-img2" class="text-xs font-bold text-white">📸 Image 2</span>
                             <input type="file" id="img2-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white cursor-pointer">
                         </div>
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
-                            <span class="text-xs font-bold text-white">🖼️ الصورة الثالثة 3</span>
+                            <span id="lbl-img3" class="text-xs font-bold text-white">🖼️ Image 3</span>
                             <input type="file" id="img3-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white cursor-pointer">
                         </div>
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
-                            <span class="text-xs font-bold text-white">🎬 فيديو المنتج (MP4)</span>
+                            <span id="lbl-vid" class="text-xs font-bold text-white">🎬 Product Video (MP4)</span>
                             <input type="file" id="video-file" accept="video/mp4" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-600 file:text-white cursor-pointer">
                         </div>
                     </div>
@@ -128,23 +126,23 @@
             </div>
 
             <div class="mt-8 pt-6 border-t border-slate-800">
-                <button onclick="addNewProduct()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2">
-                    <span>✨</span> نشر المنتج في القسم المحدد (Publish Product)
+                <button id="btn-publish" onclick="addNewProduct()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2">
+                    <span>✨</span> Publish Product (نشر المنتج)
                 </button>
             </div>
         </div>
 
-        <!-- عرض 1: المعرض الرئيسي (جميع الأقسام) -->
+        <!-- عرض 1: المعرض الرئيسي لجميع الأقسام -->
         <div id="gallery-view" class="space-y-16">
             <div class="text-center mb-6 space-y-3">
-                <h1 class="text-4xl font-black text-white">paris-mode Store</h1>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view 3 photos, video reviews, and shop via affiliate links.</p>
+                <h1 id="store-main-title" class="text-4xl font-black text-white">paris-mode Store</h1>
+                <p id="store-main-desc" class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view details, photos, and video reviews.</p>
             </div>
 
             <!-- 1. القسم النسائي والشناتي -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👗</span> Women's Section & Handbags</h2>
+                    <h2 id="sec-women-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👗</span> Women's Section & Handbags</h2>
                 </div>
                 <div id="grid-women" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
@@ -152,7 +150,7 @@
             <!-- 2. قسم اللانجري النسائي -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 class="text-2xl font-bold text-pink-400 flex items-center gap-2"><span>✨</span> Women's Lingerie Collection</h2>
+                    <h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400 flex items-center gap-2"><span>✨</span> Women's Lingerie Collection</h2>
                 </div>
                 <div id="grid-lingerie" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
@@ -160,7 +158,7 @@
             <!-- 3. القسم الرجالي -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👔</span> Men's Section</h2>
+                    <h2 id="sec-men-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👔</span> Men's Section</h2>
                 </div>
                 <div id="grid-men" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
@@ -168,74 +166,67 @@
             <!-- 4. قسم الإلكترونيات -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>🔌</span> Electronics & Gadgets</h2>
+                    <h2 id="sec-tech-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>🔌</span> Electronics & Gadgets</h2>
                 </div>
                 <div id="grid-tech" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
         </div>
 
-        <!-- عرض 2: صفحة تفاصيل المنتج الفردي (Product Detail View) -->
+        <!-- عرض 2: صفحة تفاصيل المنتج الفردي -->
         <div id="product-detail-view" class="hidden space-y-8">
-            <button onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">
+            <button id="btn-back" onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">
                 ← Back to Store (العودة للمتجر)
             </button>
 
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- معرض الصور والفيديو -->
                 <div class="space-y-4">
                     <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
                         <img id="detail-main-img" src="" alt="Product" class="w-full h-full object-cover">
                     </div>
-                    <!-- الصور الثلاث المصغرة -->
                     <div class="grid grid-cols-3 gap-3">
                         <img id="detail-thumb-0" src="" onclick="setMainImage(this.src)" alt="Thumb 1" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
                         <img id="detail-thumb-1" src="" onclick="setMainImage(this.src)" alt="Thumb 2" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
                         <img id="detail-thumb-2" src="" onclick="setMainImage(this.src)" alt="Thumb 3" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
                     </div>
-                    <!-- فيديو المنتج -->
                     <div class="mt-6">
-                        <h4 class="text-xs font-bold text-indigo-400 mb-2 uppercase tracking-wide">Product Video Review (فيديو المنتج):</h4>
+                        <h4 id="lbl-vid-review" class="text-xs font-bold text-indigo-400 mb-2 uppercase tracking-wide">Product Video Review:</h4>
                         <div id="video-container" class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center"></div>
                     </div>
                 </div>
 
-                <!-- تفاصيل المنتج والمواصفات والأزرار -->
                 <div class="space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
                         <h1 id="detail-title" class="text-3xl sm:text-4xl font-black text-white"></h1>
                         
-                        <!-- زر الإعجاب -->
                         <div class="flex items-center gap-3">
                             <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-4 py-2 rounded-xl text-sm font-bold transition border border-slate-700 flex items-center gap-2">
-                                <span>❤️</span> <span id="like-text">Like (إعجاب)</span> <span id="like-count" class="bg-slate-900 px-2 py-0.5 rounded-lg text-xs">24</span>
+                                <span>❤️</span> <span id="like-text">Like</span> <span id="like-count" class="bg-slate-900 px-2 py-0.5 rounded-lg text-xs">24</span>
                             </button>
                         </div>
 
                         <div class="space-y-2 pt-2">
-                            <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wide">Specifications (المواصفات):</h4>
+                            <h4 id="lbl-specs-title" class="text-xs font-bold text-indigo-400 uppercase tracking-wide">Specifications:</h4>
                             <p id="detail-specs" class="text-slate-300 text-sm leading-relaxed bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60"></p>
                         </div>
                     </div>
 
-                    <!-- أزرار أضف للسلة وتسوق الآن -->
                     <div class="space-y-3 pt-6 border-t border-slate-800">
-                        <button onclick="alert('تمت إضافة المنتج إلى السلة بنجاح! Product added to cart.')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-3.5 rounded-xl transition border border-slate-700 flex items-center justify-center gap-2">
-                            <span>🛒</span> Add to Cart (أضف للسلة)
+                        <button id="btn-add-cart" onclick="alert('Product added to cart!')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-3.5 rounded-xl transition border border-slate-700 flex items-center justify-center gap-2">
+                            <span>🛒</span> Add to Cart
                         </button>
                         <a id="detail-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl transition shadow-xl text-lg">
-                            Shop Now (تسوق الآن عبر الأفلييت)
+                            Shop Now
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- قسم التعليقات -->
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>💬</span> Customer Reviews & Comments (آراء العملاء)</h3>
+                <h3 id="lbl-reviews-title" class="text-xl font-bold text-white flex items-center gap-2"><span>💬</span> Customer Reviews & Comments</h3>
                 <div class="space-y-3">
-                    <input type="text" id="comment-name" placeholder="Your Name (اسمك)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    <textarea id="comment-text" rows="3" placeholder="Write your review here... (اكتب رأيك هنا)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
-                    <button onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">Post Review (إرسال التعليق)</button>
+                    <input type="text" id="comment-name" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    <textarea id="comment-text" rows="3" placeholder="Write your review here..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    <button id="btn-post-comment" onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">Post Review</button>
                 </div>
                 <div id="comments-list" class="space-y-4 pt-4 border-t border-slate-800">
                     <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/60 space-y-1">
@@ -263,7 +254,7 @@
     <!-- تذييل الصفحة -->
     <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-10 text-center mt-16 space-y-6">
         <div class="max-w-4xl mx-auto px-4">
-            <h4 class="text-white font-bold mb-4 tracking-wide uppercase text-xs text-indigo-400">Follow Our Networks & Blogs</h4>
+            <h4 id="footer-networks" class="text-white font-bold mb-4 tracking-wide uppercase text-xs text-indigo-400">Follow Our Networks & Blogs</h4>
             <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
                 <a href="https://paris-mode-tendance.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>📰</span> Paris Mode Blog</a>
                 <a href="https://wasimtech2026.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>💻</span> Wasim Tech</a>
@@ -273,14 +264,14 @@
             </div>
         </div>
         <div class="border-t border-slate-800/80 pt-6 space-y-2">
-            <p>&copy; 2026 paris-mode. All rights reserved. Affiliate partner links included.</p>
+            <p id="footer-rights">&copy; 2026 paris-mode. All rights reserved. Affiliate partner links included.</p>
             <p class="text-xs text-slate-500">Contact: wassmasster77@gmail.com | Phone: 0033764026479</p>
         </div>
     </footer>
 
-    <!-- سكربت إدارة الأقسام والمنتجات المتعددة -->
+    <!-- سكربت الترجمة المتكاملة وإدارة المتجر -->
     <script>
-        let storeData = {
+        const storeData = {
             women: [
                 {
                     title: 'Luxury Parisian Leather Handbag',
@@ -334,6 +325,259 @@
                 }
             ]
         };
+
+        const translations = {
+            en: {
+                dir: 'ltr',
+                banner: 'Welcome to Paris-Mode | Multi-Department Store & Trusted Affiliate Partners',
+                adminTitle: 'Multi-Department Creator (Admin Dashboard)',
+                lblDept: 'Select Department',
+                optWomen: "Women's Section & Handbags",
+                optLingerie: "Women's Lingerie Collection",
+                optMen: "Men's Section",
+                optTech: "Electronics & Gadgets",
+                lblTitle: 'Product Title',
+                lblSpecs: 'Description & Specs',
+                lblLink: 'Affiliate Link / Shop Now',
+                lblMedia: 'Media Upload',
+                lblImg1: 'Main Image 1',
+                lblImg2: 'Image 2',
+                lblImg3: 'Image 3',
+                lblVid: 'Product Video (MP4)',
+                btnPublish: 'Publish Product to Store',
+                storeTitle: 'paris-mode Store',
+                storeDesc: 'Explore all departments. Click any product to view details, photos, and video reviews.',
+                secWomen: "Women's Section & Handbags",
+                secLingerie: "Women's Lingerie Collection",
+                secMen: "Men's Section",
+                secTech: "Electronics & Gadgets",
+                btnDetails: 'Details',
+                viewText: 'View 3 photos & video →',
+                btnBack: '← Back to Store',
+                lblVidReview: 'Product Video Review:',
+                like: 'Like',
+                specsTitle: 'Specifications:',
+                addCart: 'Add to Cart',
+                shopNow: 'Shop Now',
+                reviewsTitle: 'Customer Reviews & Comments',
+                namePlaceholder: 'Your Name',
+                commentPlaceholder: 'Write your review here...',
+                postReview: 'Post Review',
+                footerNetworks: 'Follow Our Networks & Blogs',
+                footerRights: '© 2026 paris-mode. All rights reserved. Affiliate partner links included.'
+            },
+            ar: {
+                dir: 'rtl',
+                banner: 'مرحباً بكم في باريس-مود | المتجر الشامل لأقسام التسويق بالعمولة والشركاء الموثوقين',
+                adminTitle: 'لوحة التحكم الإدارية (إضافة منتج جديد)',
+                lblDept: 'اختر القسم',
+                optWomen: 'القسم النسائي والشناتي',
+                optLingerie: 'قسم اللانجري النسائي الجديد',
+                optMen: 'القسم الرجالي',
+                optTech: 'قسم الإلكترونيات والأجهزة',
+                lblTitle: 'عنوان المنتج',
+                lblSpecs: 'الوصف والمواصفات',
+                lblLink: 'رابط التسويق بالعمولة (Affiliate Link)',
+                lblMedia: 'رفع الوسائط من الجهاز',
+                lblImg1: 'الصورة الرئيسية الأولى',
+                lblImg2: 'الصورة الثانية',
+                lblImg3: 'الصورة الثالثة',
+                lblVid: 'فيديو المنتج (MP4)',
+                btnPublish: 'نشر المنتج في المتجر فوراً',
+                storeTitle: 'متجر paris-mode الشامل',
+                storeDesc: 'استعرض جميع الأقسام. انقر على أي منتج لعرض التفاصيل، الصور الثلاث، وفيديوهات المراجعة.',
+                secWomen: 'القسم النسائي والشناتي',
+                secLingerie: 'تشكيلة اللانجري النسائي',
+                secMen: 'القسم الرجالي',
+                secTech: 'الإلكترونيات والأجهزة الذكية',
+                btnDetails: 'التفاصيل',
+                viewText: 'عرض 3 صور والفيديو ←',
+                btnBack: '← العودة إلى المتجر الرئيسي',
+                lblVidReview: 'فيديو مراجعة المنتج:',
+                like: 'إعجاب',
+                specsTitle: 'المواصفات التفصيلية:',
+                addCart: 'أضف للسلة',
+                shopNow: 'تسوق الآن عبر الأفلييت',
+                reviewsTitle: 'آراء وتقييمات العملاء',
+                namePlaceholder: 'اكتب اسمك هنا...',
+                commentPlaceholder: 'اكتب رأيك أو تقييمك للمنتج...',
+                postReview: 'إرسال التعليق',
+                footerNetworks: 'تابع شبكاتنا ومدوناتنا',
+                footerRights: '© 2026 paris-mode. جميع الحقوق محفوظة. يتضمن روابط تسويق بالعمولة.'
+            },
+            fr: {
+                dir: 'ltr',
+                banner: 'Bienvenue sur Paris-Mode | Boutique multi-départements & Partenaires',
+                adminTitle: 'Créateur de produits (Panneau d’administration)',
+                lblDept: 'Sélectionner le département',
+                optWomen: 'Section Femmes & Sacs à main',
+                optLingerie: 'Collection Lingerie pour Femmes',
+                optMen: 'Section Hommes',
+                optTech: 'Électronique & Gadgets',
+                lblTitle: 'Titre du produit',
+                lblSpecs: 'Description et spécifications',
+                lblLink: 'Lien d’affiliation',
+                lblMedia: 'Téléchargement de médias',
+                lblImg1: 'Image principale 1',
+                lblImg2: 'Image 2',
+                lblImg3: 'Image 3',
+                lblVid: 'Vidéo du produit (MP4)',
+                btnPublish: 'Publier le produit',
+                storeTitle: 'Boutique paris-mode',
+                storeDesc: 'Explorez tous les départements. Cliquez sur un produit pour voir les détails et vidéos.',
+                secWomen: 'Section Femmes & Sacs à main',
+                secLingerie: 'Collection Lingerie pour Femmes',
+                secMen: 'Section Hommes',
+                secTech: 'Électronique & Gadgets',
+                btnDetails: 'Détails',
+                viewText: 'Voir 3 photos et vidéo →',
+                btnBack: '← Retour à la boutique',
+                lblVidReview: 'Revue vidéo du produit :',
+                like: 'J’aime',
+                specsTitle: 'Spécifications :',
+                addCart: 'Ajouter au panier',
+                shopNow: 'Acheter maintenant',
+                reviewsTitle: 'Avis et commentaires des clients',
+                namePlaceholder: 'Votre nom',
+                commentPlaceholder: 'Écrivez votre avis ici...',
+                postReview: 'Publier l’avis',
+                footerNetworks: 'Suivez nos réseaux et blogs',
+                footerRights: '© 2026 paris-mode. Tous droits réservés. Liens d’affiliation inclus.'
+            },
+            de: {
+                dir: 'ltr',
+                banner: 'Willkommen bei Paris-Mode | Multi-Department Store & Partner',
+                adminTitle: 'Produkt-Creator (Admin-Panel)',
+                lblDept: 'Abteilung auswählen',
+                optWomen: 'Damenbereich & Handtaschen',
+                optLingerie: 'Damen-Lingerie-Kollektion',
+                optMen: 'Herrenbereich',
+                optTech: 'Elektronik & Gadgets',
+                lblTitle: 'Produkttitel',
+                lblSpecs: 'Beschreibung & Spezifikationen',
+                lblLink: 'Affiliate-Link',
+                lblMedia: 'Medien-Upload',
+                lblImg1: 'Hauptbild 1',
+                lblImg2: 'Bild 2',
+                lblImg3: 'Bild 3',
+                lblVid: 'Produktvideo (MP4)',
+                btnPublish: 'Produkt veröffentlichen',
+                storeTitle: 'paris-mode Store',
+                storeDesc: 'Entdecken Sie alle Abteilungen. Klicken Sie auf ein Produkt für Details.',
+                secWomen: 'Damenbereich & Handtaschen',
+                secLingerie: 'Damen-Lingerie-Kollektion',
+                secMen: 'Herrenbereich',
+                secTech: 'Elektronik & Gadgets',
+                btnDetails: 'Details',
+                viewText: '3 Fotos & Video anzeigen →',
+                btnBack: '← Zurück zum Shop',
+                lblVidReview: 'Produktvideo-Bewertung:',
+                like: 'Gefällt mir',
+                specsTitle: 'Spezifikationen:',
+                addCart: 'In den Warenkorb',
+                shopNow: 'Jetzt kaufen',
+                reviewsTitle: 'Kundenbewertungen & Kommentare',
+                namePlaceholder: 'Ihr Name',
+                commentPlaceholder: 'Schreiben Sie Ihre Bewertung...',
+                postReview: 'Bewertung absenden',
+                footerNetworks: 'Folgen Sie unseren Netzwerken & Blogs',
+                footerRights: '© 2026 paris-mode. Alle Rechte vorbehalten. Affiliate-Links enthalten.'
+            },
+            nl: {
+                dir: 'ltr',
+                banner: 'Welkom bij Paris-Mode | Multi-Department Store & Partners',
+                adminTitle: 'Product Creator (Beheerderspaneel)',
+                lblDept: 'Selecteer Afdeling',
+                optWomen: 'Damessectie & Handtassen',
+                optLingerie: 'Dames Lingerie Collectie',
+                optMen: 'Herensectie',
+                optTech: 'Elektronica & Gadgets',
+                lblTitle: 'Producttitel',
+                lblSpecs: 'Beschrijving & Specificaties',
+                lblLink: 'Affiliate Link',
+                lblMedia: 'Media Uploaden',
+                lblImg1: 'Hoofdafbeelding 1',
+                lblImg2: 'Afbeelding 2',
+                lblImg3: 'Afbeelding 3',
+                lblVid: 'Productvideo (MP4)',
+                btnPublish: 'Product publiceren',
+                storeTitle: 'paris-mode Winkel',
+                storeDesc: 'Verken alle afdelingen. Klik op een product voor details, foto’s en video’s.',
+                secWomen: 'Damessectie & Handtassen',
+                secLingerie: 'Dames Lingerie Collectie',
+                secMen: 'Herensectie',
+                secTech: 'Elektronica & Gadgets',
+                btnDetails: 'Details',
+                viewText: 'Bekijk 3 foto’s & video →',
+                btnBack: '← Terug naar winkel',
+                lblVidReview: 'Productvideo review:',
+                like: 'Vind ik leuk',
+                specsTitle: 'Specificaties:',
+                addCart: 'Winkelmand',
+                shopNow: 'Nu kopen',
+                reviewsTitle: 'Klantbeoordelingen & Reacties',
+                namePlaceholder: 'Uw naam',
+                commentPlaceholder: 'Schrijf hier uw beoordeling...',
+                postReview: 'Beoordeling plaatsen',
+                footerNetworks: 'Volg onze netwerken & blogs',
+                footerRights: '© 2026 paris-mode. Alle rechten voorbehouden. Inclusief affiliate links.'
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            const root = document.getElementById('html-root');
+            root.setAttribute('lang', lang);
+            root.setAttribute('dir', t.dir);
+
+            document.getElementById('top-banner').innerText = t.banner;
+            document.getElementById('admin-panel-title').innerHTML = `<span>📦</span> ${t.adminTitle}`;
+            document.getElementById('lbl-dept').innerText = t.lblDept;
+            document.getElementById('opt-women').innerText = t.optWomen;
+            document.getElementById('opt-lingerie').innerText = t.optLingerie;
+            document.getElementById('opt-men').innerText = t.optMen;
+            document.getElementById('opt-tech').innerText = t.optTech;
+            document.getElementById('lbl-title').innerText = t.lblTitle;
+            document.getElementById('lbl-specs').innerText = t.lblSpecs;
+            document.getElementById('lbl-link').innerText = t.lblLink;
+            document.getElementById('lbl-media').innerText = t.lblMedia;
+            document.getElementById('lbl-img1').innerText = t.lblImg1;
+            document.getElementById('lbl-img2').innerText = t.lblImg2;
+            document.getElementById('lbl-img3').innerText = t.lblImg3;
+            document.getElementById('lbl-vid').innerText = t.lblVid;
+            document.getElementById('btn-publish').innerHTML = `<span>✨</span> ${t.btnPublish}`;
+
+            document.getElementById('store-main-title').innerText = t.storeTitle;
+            document.getElementById('store-main-desc').innerText = t.storeDesc;
+            document.getElementById('sec-women-title').innerHTML = `<span>👗</span> ${t.secWomen}`;
+            document.getElementById('sec-lingerie-title').innerHTML = `<span>✨</span> ${t.secLingerie}`;
+            document.getElementById('sec-men-title').innerHTML = `<span>👔</span> ${t.secMen}`;
+            document.getElementById('sec-tech-title').innerHTML = `<span>🔌</span> ${t.secTech}`;
+
+            document.getElementById('btn-back').innerHTML = `← ${t.btnBack}`;
+            document.getElementById('lbl-vid-review').innerText = t.lblVidReview;
+            document.getElementById('like-text').innerText = t.like;
+            document.getElementById('lbl-specs-title').innerText = t.specsTitle;
+            document.getElementById('btn-add-cart').innerHTML = `<span>🛒</span> ${t.addCart}`;
+            document.getElementById('detail-buy-btn').innerText = t.shopNow;
+            document.getElementById('lbl-reviews-title').innerHTML = `<span>💬</span> ${t.reviewsTitle}`;
+            document.getElementById('comment-name').placeholder = t.namePlaceholder;
+            document.getElementById('comment-text').placeholder = t.commentPlaceholder;
+            document.getElementById('btn-post-comment').innerText = t.postReview;
+
+            document.getElementById('footer-networks').innerText = t.footerNetworks;
+            document.getElementById('footer-rights').innerText = t.footerRights;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.getAttribute('data-lang') === lang) {
+                    btn.className = 'px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition lang-btn';
+                } else {
+                    btn.className = 'px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition lang-btn';
+                }
+            });
+
+            renderStore();
+        }
 
         function addNewProduct() {
             const dept = document.getElementById('admin-dept').value;
@@ -411,13 +655,16 @@
         }
 
         function renderStore() {
-            renderGrid('women', 'grid-women');
-            renderGrid('lingerie', 'grid-lingerie');
-            renderGrid('men', 'grid-men');
-            renderGrid('tech', 'grid-tech');
+            const currentLang = document.getElementById('html-root').getAttribute('lang') || 'en';
+            const t = translations[currentLang];
+
+            renderGrid('women', 'grid-women', t.viewText, t.btnDetails);
+            renderGrid('lingerie', 'grid-lingerie', t.viewText, t.btnDetails);
+            renderGrid('men', 'grid-men', t.viewText, t.btnDetails);
+            renderGrid('tech', 'grid-tech', t.viewText, t.btnDetails);
         }
 
-        function renderGrid(deptKey, gridId) {
+        function renderGrid(deptKey, gridId, viewText, detailsText) {
             const grid = document.getElementById(gridId);
             grid.innerHTML = '';
             storeData[deptKey].forEach((p, index) => {
@@ -433,8 +680,8 @@
                             </div>
                         </div>
                         <div class="p-6 flex items-center justify-between">
-                            <span class="text-xs text-indigo-400 font-semibold">View 3 photos & video →</span>
-                            <span class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-xl font-bold">Details</span>
+                            <span class="text-xs text-indigo-400 font-semibold">${viewText}</span>
+                            <span class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-xl font-bold">${detailsText}</span>
                         </div>
                     </div>
                 `;
@@ -511,17 +758,6 @@
             list.prepend(commentDiv);
             nameInput.value = '';
             textInput.value = '';
-        }
-
-        function setLanguage(lang) {
-            const translations = {
-                en: { banner: 'Welcome to Paris-Mode | Multi-Department Store & Trusted Affiliate Partners' },
-                ar: { banner: 'مرحباً بكم في باريس-مود | المتجر الشامل لأقسام التسويق بالعمولة' },
-                fr: { banner: 'Bienvenue sur Paris-Mode | Boutique multi-départements' },
-                de: { banner: 'Willkommen bei Paris-Mode | Multi-Department Store' },
-                nl: { banner: 'Welkom bij Paris-Mode | Multi-Department Store' }
-            };
-            document.getElementById('top-banner').innerText = translations[lang].banner;
         }
 
         renderStore();
