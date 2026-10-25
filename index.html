@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paris-mode - Online Store</title>
+    <title>paris-mode - Handbags Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .card-3d-tilt {
@@ -41,14 +41,14 @@
     <!-- شريط الترحيب المتحرك العلوي -->
     <div class="bg-indigo-600 text-white text-xs font-semibold py-2 overflow-hidden relative">
         <div class="marquee-container">
-            <span id="top-banner" class="marquee-text">Welcome to Paris-Mode | Exclusive Curated Selection & Trusted Affiliate Partners</span>
+            <span id="top-banner" class="marquee-text">Welcome to Paris-Mode | Exclusive Handbags Collection & Trusted Affiliate Partners</span>
         </div>
     </div>
 
     <!-- شريط التنقل العلوي -->
     <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="text-2xl font-black text-indigo-500 tracking-wider">paris-mode.</div>
+            <div class="text-2xl font-black text-indigo-500 tracking-wider cursor-pointer" onclick="goHome()">paris-mode.</div>
             
             <!-- أزرار تبديل اللغات -->
             <div class="flex items-center gap-1.5 bg-slate-800 p-1 rounded-xl border border-slate-700 text-xs">
@@ -61,137 +61,188 @@
         </div>
     </header>
 
-    <!-- العنوان والترحيب -->
-    <section class="bg-gradient-to-r from-indigo-950 via-slate-900 to-purple-950 py-12 text-center px-4 border-b border-slate-800">
-        <h1 id="main-title" class="text-4xl sm:text-5xl font-black mb-3 text-white">Welcome to paris-mode</h1>
-        <p id="main-desc" class="text-slate-400 text-base max-w-xl mx-auto">Your premier destination for high-end fashion, clothing, and modern electronics.</p>
-    </section>
+    <!-- المحتوى الرئيسي: قسم الشناتي (عرض الشبكة أو صفحة التفاصيل) -->
+    <main class="max-w-7xl mx-auto px-4 py-10">
 
-    <!-- الأقسام والمنتجات مع خاصية عرض التفاصيل -->
-    <main class="max-w-7xl mx-auto px-4 py-6 space-y-16">
-
-        <!-- القسم النسائي والشناتي -->
-        <section>
-            <div class="border-b border-slate-800 pb-3 mb-8 flex items-center justify-between">
-                <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                    <span>👗</span> <span class="sec-women-heading">Women's Section & Handbags</span>
-                </h2>
+        <!-- عرض 1: شبكة قسم الشناتي (Gallery View) -->
+        <div id="gallery-view">
+            <div class="text-center mb-10 space-y-3">
+                <h1 class="text-4xl font-black text-white">Parisian Handbags Gallery</h1>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto">Explore our curated collection of luxury handbags. Click any bag to view details, 3 photos, video reviews, and shop via affiliate links.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- منتج 1 -->
-                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden bg-slate-800 relative cursor-pointer" onclick="openProductModal('Luxury Leather Handbag', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60', 'Elegant and trendy design crafted for perfection with premium materials.', 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C')">
-                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60" alt="Handbags" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-bold">View Details & Videos</div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-1">Luxury Leather Handbag</h3>
-                            <p class="text-slate-400 text-sm mb-4">Elegant and trendy design crafted for perfection.</p>
+
+            <!-- شبكة المنتجات (يمكنك تكرار هذه البطاقات لـ 100 شنطة بسهولة) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- بطاقة شنطة رقم 1 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between" 
+                     onclick="openProduct({
+                        title: 'Luxury Parisian Leather Handbag',
+                        images: [
+                            'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60',
+                            'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=60',
+                            'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60'
+                        ],
+                        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                        specs: 'Crafted from premium genuine leather, featuring gold-tone hardware, spacious dual compartments, and an adjustable shoulder strap. Perfect for daily elegance and formal evenings.',
+                        link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                     })">
+                    <div class="h-64 overflow-hidden bg-slate-800 relative">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60" alt="Handbag 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">Handbags Collection</span>
+                                <h3 class="text-xl font-bold text-white">Luxury Parisian Handbag</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openProductModal('Luxury Leather Handbag', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60', 'Elegant and trendy design crafted for perfection with premium materials.', 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C')" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold py-2.5 rounded-xl transition mb-2">View Details</button>
-                        <a href="https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
+                    <div class="p-6 flex items-center justify-between">
+                        <span class="text-xs text-indigo-400 font-semibold">Click to view 3 photos & video →</span>
+                        <span class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-xl font-bold">View Details</span>
                     </div>
                 </div>
 
-                <!-- منتج 2 -->
-                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden bg-slate-800 relative cursor-pointer" onclick="openProductModal('Chic Winter Jacket', 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&auto=format&fit=crop&q=60', 'Warm, stylish, and suitable for all winter occasions.', 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C')">
-                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&auto=format&fit=crop&q=60" alt="Jackets" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-bold">View Details & Videos</div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-1">Chic Winter Jacket</h3>
-                            <p class="text-slate-400 text-sm mb-4">Warm, stylish, and suitable for all occasions.</p>
+                <!-- بطاقة شنطة رقم 2 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between" 
+                     onclick="openProduct({
+                        title: 'Chic Velvet Evening Bag',
+                        images: [
+                            'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&auto=format&fit=crop&q=60',
+                            'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&auto=format&fit=crop&q=60',
+                            'https://images.unsplash.com/photo-1575032617751-6dcbde2f42da?w=600&auto=format&fit=crop&q=60'
+                        ],
+                        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                        specs: 'Soft velvet exterior with a magnetic snap closure and chain strap. Compact yet roomy enough for your smartphone, keys, and cosmetics.',
+                        link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                     })">
+                    <div class="h-64 overflow-hidden bg-slate-800 relative">
+                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&auto=format&fit=crop&q=60" alt="Handbag 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">Handbags Collection</span>
+                                <h3 class="text-xl font-bold text-white">Chic Velvet Evening Bag</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openProductModal('Chic Winter Jacket', 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&auto=format&fit=crop&q=60', 'Warm, stylish, and suitable for all winter occasions.', 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C')" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold py-2.5 rounded-xl transition mb-2">View Details</button>
-                        <a href="https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
+                    <div class="p-6 flex items-center justify-between">
+                        <span class="text-xs text-indigo-400 font-semibold">Click to view 3 photos & video →</span>
+                        <span class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-xl font-bold">View Details</span>
+                    </div>
+                </div>
+
+                <!-- بطاقة شنطة رقم 3 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between" 
+                     onclick="openProduct({
+                        title: 'Modern Tote Bag',
+                        images: [
+                            'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=600&auto=format&fit=crop&q=60',
+                            'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=60',
+                            'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&auto=format&fit=crop&q=60'
+                        ],
+                        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                        specs: 'Large capacity tote bag designed for everyday professional use. Features reinforced handles and weather-resistant canvas fabric.',
+                        link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                     })">
+                    <div class="h-64 overflow-hidden bg-slate-800 relative">
+                        <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=600&auto=format&fit=crop&q=60" alt="Handbag 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">Handbags Collection</span>
+                                <h3 class="text-xl font-bold text-white">Modern Tote Bag</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex items-center justify-between">
+                        <span class="text-xs text-indigo-400 font-semibold">Click to view 3 photos & video →</span>
+                        <span class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-xl font-bold">View Details</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- عرض 2: صفحة تفاصيل المنتج الفردي (Product Detail View - مخفية افتراضياً) -->
+        <div id="product-detail-view" class="hidden space-y-8">
+            <button onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2 rounded-xl text-sm font-bold transition flex items-center gap-2">
+                ← Back to Gallery (العودة للقسم)
+            </button>
+
+            <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- معرض الصور الثلاث والفيديو -->
+                <div class="space-y-4">
+                    <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
+                        <img id="detail-main-img" src="" alt="Product" class="w-full h-full object-cover">
+                    </div>
+                    <!-- الصور الثلاث المصغرة -->
+                    <div class="grid grid-cols-3 gap-3">
+                        <img id="detail-thumb-0" src="" onclick="setMainImage(this.src)" alt="Thumb 1" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
+                        <img id="detail-thumb-1" src="" onclick="setMainImage(this.src)" alt="Thumb 2" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
+                        <img id="detail-thumb-2" src="" onclick="setMainImage(this.src)" alt="Thumb 3" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
+                    </div>
+                    <!-- فيديو المنتج -->
+                    <div class="mt-6">
+                        <h4 class="text-xs font-bold text-indigo-400 mb-2 uppercase tracking-wide">Product Video Review (فيديو المنتج):</h4>
+                        <div class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
+                            <iframe id="detail-video" src="" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تفاصيل المنتج والمواصفات والأزرار والتفاعل -->
+                <div class="space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h1 id="detail-title" class="text-3xl sm:text-4xl font-black text-white"></h1>
+                        
+                        <!-- زر الإعجاب (Like) -->
+                        <div class="flex items-center gap-3">
+                            <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-4 py-2 rounded-xl text-sm font-bold transition border border-slate-700 flex items-center gap-2">
+                                <span>❤️</span> <span id="like-text">Like (إعجاب)</span> <span id="like-count" class="bg-slate-900 px-2 py-0.5 rounded-lg text-xs">24</span>
+                            </button>
+                        </div>
+
+                        <div class="space-y-2 pt-2">
+                            <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wide">Specifications (المواصفات):</h4>
+                            <p id="detail-specs" class="text-slate-300 text-sm leading-relaxed bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60"></p>
+                        </div>
+                    </div>
+
+                    <!-- أزرار أضف للسلة وتسوق الآن -->
+                    <div class="space-y-3 pt-6 border-t border-slate-800">
+                        <button onclick="alert('تمت إضافة المنتج إلى السلة بنجاح! Product added to cart.')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-3.5 rounded-xl transition border border-slate-700 flex items-center justify-center gap-2">
+                            <span>🛒</span> Add to Cart (أضف للسلة)
+                        </button>
+                        <a id="detail-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl transition shadow-xl text-lg">
+                            Shop Now (تسوق الآن عبر الأفلييت)
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- القسم الجديد: اللانجري النسائي (Women's Lingerie) -->
-        <section>
-            <div class="border-b border-slate-800 pb-3 mb-8 flex items-center justify-between">
-                <h2 class="text-2xl font-bold text-pink-400 flex items-center gap-2">
-                    <span>✨</span> <span class="sec-lingerie-heading">Women's Lingerie Collection</span>
-                </h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- منتج لانجري 1 -->
-                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden bg-slate-800 relative cursor-pointer" onclick="openProductModal('Satin Elegant Lingerie Set', 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500&auto=format&fit=crop&q=60', 'Luxurious satin fabric designed for ultimate comfort and elegance.', 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C')">
-                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500&auto=format&fit=crop&q=60" alt="Lingerie" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-bold">View Details & Videos</div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-1">Satin Elegant Lingerie Set</h3>
-                            <p class="text-slate-400 text-sm mb-4">Luxurious satin fabric designed for ultimate comfort.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openProductModal('Satin Elegant Lingerie Set', 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500&auto=format&fit=crop&q=60', 'Luxurious satin fabric designed for ultimate comfort and elegance.', 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C')" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold py-2.5 rounded-xl transition mb-2">View Details</button>
-                        <a href="https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
-                    </div>
+            <!-- قسم التعليقات والآراء (Reviews & Comments) -->
+            <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>💬</span> Customer Reviews & Comments (آراء العملاء)</h3>
+                
+                <!-- نموذج إضافة تعليق -->
+                <div class="space-y-3">
+                    <input type="text" id="comment-name" placeholder="Your Name (اسمك)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    <textarea id="comment-text" rows="3" placeholder="Write your review here... (اكتب رأيك هنا)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    <button onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">Post Review (إرسال التعليق)</button>
                 </div>
-            </div>
-        </section>
 
-        <!-- القسم الرجالي -->
-        <section>
-            <div class="border-b border-slate-800 pb-3 mb-8 flex items-center justify-between">
-                <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                    <span>👔</span> <span class="sec-men-heading">Men's Section</span>
-                </h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- منتج رجالي -->
-                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden bg-slate-800 relative cursor-pointer" onclick="openProductModal('Men Classic Jacket', 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=500&auto=format&fit=crop&q=60', 'Sophisticated and practical menswear for daily outings.', 'https://fr.shein.com/p-568031556.html')">
-                            <img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=500&auto=format&fit=crop&q=60" alt="Men Jacket" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-bold">View Details & Videos</div>
+                <!-- قائمة التعليقات -->
+                <div id="comments-list" class="space-y-4 pt-4 border-t border-slate-800">
+                    <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/60 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h5 class="font-bold text-white text-sm">Sophie Martin</h5>
+                            <span class="text-xs text-slate-500">2 days ago</span>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-1">Men's Classic Jacket</h3>
-                            <p class="text-slate-400 text-sm mb-4">Sophisticated and practical menswear for daily outings.</p>
-                        </div>
+                        <p class="text-slate-300 text-xs">Amazing quality! Exactly as shown in the video and pictures. Fast shipping.</p>
                     </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openProductModal('Men Classic Jacket', 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=500&auto=format&fit=crop&q=60', 'Sophisticated and practical menswear for daily outings.', 'https://fr.shein.com/p-568031556.html')" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold py-2.5 rounded-xl transition mb-2">View Details</button>
-                        <a href="https://fr.shein.com/p-568031556.html" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- نافذة تفاصيل المنتج المنبثقة (Modal) للصور والفيديوهات والمواصفات -->
-    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl max-w-2xl w-full p-6 relative shadow-2xl space-y-6">
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-slate-800 text-slate-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">✕</button>
-            <div class="flex flex-col md:flex-row gap-6">
-                <img id="modal-img" src="" alt="Product" class="w-full md:w-1/2 h-64 object-cover rounded-2xl border border-slate-800">
-                <div class="space-y-4 flex-1">
-                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
-                    <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
-                    <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700">
-                        <span class="text-xs font-bold text-indigo-400 block mb-1">Product Showcase / Video preview:</span>
-                        <div class="text-xs text-slate-400 italic">High-definition presentation & customer reviews available via affiliate partner.</div>
-                    </div>
-                    <a id="modal-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg">Buy Now via Affiliate</a>
                 </div>
             </div>
         </div>
-    </div>
+
+    </main>
 
     <!-- زر الواتساب العائم -->
     <a href="https://wa.me/0033764026479?text=Hello%20paris-mode,%20I%20have%20an%20inquiry" target="_blank" 
@@ -202,7 +253,7 @@
         </svg>
     </a>
 
-    <!-- تذييل الصفحة مع السوشيال ميديا والمدونات -->
+    <!-- تذييل الصفحة مع روابط السوشيال ميديا والمدونات -->
     <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-10 text-center mt-16 space-y-6">
         <div class="max-w-4xl mx-auto px-4">
             <h4 class="text-white font-bold mb-4 tracking-wide uppercase text-xs text-indigo-400">Follow Our Networks & Blogs</h4>
@@ -220,36 +271,82 @@
         </div>
     </footer>
 
-    <!-- سكربت التحكم بنافذة تفاصيل المنتج واللغات -->
+    <!-- سكربت التحكم بصفحة التفاصيل، الإعجاب، والتعليقات -->
     <script>
-        function openProductModal(title, img, desc, link) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-img').src = img;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-buy-btn').href = link;
-            document.getElementById('product-modal').classList.remove('hidden');
+        function openProduct(product) {
+            document.getElementById('gallery-view').classList.add('hidden');
+            document.getElementById('product-detail-view').classList.remove('hidden');
+
+            document.getElementById('detail-title').innerText = product.title;
+            document.getElementById('detail-main-img').src = product.images[0];
+            document.getElementById('detail-thumb-0').src = product.images[0];
+            document.getElementById('detail-thumb-1').src = product.images[1];
+            document.getElementById('detail-thumb-2').src = product.images[2];
+            document.getElementById('detail-video').src = product.video;
+            document.getElementById('detail-specs').innerText = product.specs;
+            document.getElementById('detail-buy-btn').href = product.link;
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function closeProductModal() {
-            document.getElementById('product-modal').classList.add('hidden');
+        function goHome() {
+            document.getElementById('product-detail-view').classList.add('hidden');
+            document.getElementById('gallery-view').classList.remove('hidden');
+            document.getElementById('detail-video').src = ''; // إيقاف الفيديو عند العودة
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setMainImage(src) {
+            document.getElementById('detail-main-img').src = src;
+        }
+
+        function toggleLike(btn) {
+            const countSpan = document.getElementById('like-count');
+            let count = parseInt(countSpan.innerText);
+            if(btn.classList.contains('liked')) {
+                btn.classList.remove('liked', 'bg-pink-600', 'text-white');
+                btn.classList.add('bg-slate-800', 'text-pink-400');
+                countSpan.innerText = count - 1;
+            } else {
+                btn.classList.add('liked', 'bg-pink-600', 'text-white');
+                btn.classList.remove('bg-slate-800', 'text-pink-400');
+                countSpan.innerText = count + 1;
+            }
+        }
+
+        function addComment() {
+            const nameInput = document.getElementById('comment-name');
+            const textInput = document.getElementById('comment-text');
+            const list = document.getElementById('comments-list');
+
+            if(nameInput.value.trim() === '' || textInput.value.trim() === '') {
+                alert('Please fill in both name and comment! (يرجى إتمام الاسم والتعليق)');
+                return;
+            }
+
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'bg-slate-800/50 p-4 rounded-2xl border border-slate-700/60 space-y-1';
+            commentDiv.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <h5 class="font-bold text-white text-sm">${nameInput.value}</h5>
+                    <span class="text-xs text-slate-500">Just now</span>
+                </div>
+                <p class="text-slate-300 text-xs">${textInput.value}</p>
+            `;
+            list.prepend(commentDiv);
+            nameInput.value = '';
+            textInput.value = '';
         }
 
         function setLanguage(lang) {
             const translations = {
-                en: { banner: 'Welcome to Paris-Mode | Exclusive Curated Selection & Trusted Affiliate Partners', title: 'Welcome to paris-mode', desc: 'Your premier destination for high-end fashion, clothing, and modern electronics.' },
-                ar: { banner: 'مرحباً بكم في باريس-مود | تشكيلة مختارة بعناية عبر شركاء موثوقين وخيارات تسويق بالعمولة', title: 'مرحباً بكم في متجر paris-mode', desc: 'وجهتكم الأولى للأزياء الراقية، الملابس العصرية، والإلكترونيات الحديثة.' },
-                fr: { banner: 'Bienvenue sur Paris-Mode | Sélection exclusive et partenaires affiliés de confiance', title: 'Bienvenue sur paris-mode', desc: 'Votre destination privilégiée pour la haute couture, les vêtements et l’électronique.' },
-                de: { banner: 'Willkommen bei Paris-Mode | Exklusive Auswahl & vertrauenswürdige Partner', title: 'Willkommen bei paris-mode', desc: 'Ihr erstklassiges Ziel für High-End-Mode, Bekleidung und moderne Elektronik.' },
-                nl: { banner: 'Welkom bij Paris-Mode | Exclusieve selectie & vertrouwde partners', title: 'Welkom bij paris-mode', desc: 'Uw premier bestemming voor high-end mode, kleding en moderne elektronica.' }
+                en: { banner: 'Welcome to Paris-Mode | Exclusive Handbags Collection & Trusted Affiliate Partners' },
+                ar: { banner: 'مرحباً بكم في باريس-مود | تشكيلة الشناتي الحصرية وخيارات التسويق بالعمولة' },
+                fr: { banner: 'Bienvenue sur Paris-Mode | Collection exclusive de sacs à main' },
+                de: { banner: 'Willkommen bei Paris-Mode | Exklusive Handtaschen-Kollektion' },
+                nl: { banner: 'Welkom bij Paris-Mode | Exclusieve Handtassen Collectie' }
             };
-            const t = translations[lang];
-            const root = document.getElementById('html-root');
-            root.setAttribute('lang', lang);
-            root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            document.getElementById('top-banner').innerText = t.banner;
-            document.getElementById('main-title').innerText = t.title;
-            document.getElementById('main-desc').innerText = t.desc;
-
+            document.getElementById('top-banner').innerText = translations[lang].banner;
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 if(btn.getAttribute('data-lang') === lang) {
                     btn.className = 'px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition lang-btn';
