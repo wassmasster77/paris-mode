@@ -44,14 +44,6 @@
                 <button onclick="setLanguage('de')" class="px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition lang-btn" data-lang="de">DE</button>
                 <button onclick="setLanguage('nl')" class="px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition lang-btn" data-lang="nl">NL</button>
             </div>
-
-            <!-- محول العملات (EUR / USD) -->
-            <div class="flex items-center gap-2">
-                <select id="currency-select" onchange="changeCurrency()" class="bg-slate-800 text-indigo-300 text-xs font-bold px-2.5 py-1.5 rounded-xl border border-slate-700 focus:outline-none">
-                    <option value="EUR">EUR (€)</option>
-                    <option value="USD">USD ($)</option>
-                </select>
-            </div>
         </div>
     </header>
 
@@ -96,7 +88,7 @@
         </div>
     </section>
 
-    <!-- الأقسام والمنتجات مع روابط الأفلييت والأسعار -->
+    <!-- الأقسام والمنتجات بدون أسعار -->
     <main class="max-w-7xl mx-auto px-4 py-6 space-y-16">
 
         <!-- القسم النسائي والشناتي -->
@@ -107,8 +99,7 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- منتج 1: الشناتي النسائي -->
+                <!-- منتج 1 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -117,7 +108,6 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-white mb-1 product-title-1">Luxury Leather Handbag</h3>
                             <p class="text-slate-400 text-sm mb-4 product-desc-1">Elegant and trendy design crafted for perfection.</p>
-                            <div class="text-indigo-400 font-bold text-lg mb-4 price-tag" data-eur="49.99" data-usd="54.99">€49.99</div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
@@ -125,7 +115,7 @@
                     </div>
                 </div>
 
-                <!-- منتج 2: جواكيت ومعاطف -->
+                <!-- منتج 2 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -134,7 +124,6 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-white mb-1 product-title-2">Chic Winter Jacket</h3>
                             <p class="text-slate-400 text-sm mb-4 product-desc-2">Warm, stylish, and suitable for all occasions.</p>
-                            <div class="text-indigo-400 font-bold text-lg mb-4 price-tag" data-eur="79.99" data-usd="86.99">€79.99</div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
@@ -142,7 +131,7 @@
                     </div>
                 </div>
 
-                <!-- منتج 3: أحذية نسائية -->
+                <!-- منتج 3 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -151,7 +140,32 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-white mb-1 product-title-3">Classic High Heels</h3>
                             <p class="text-slate-400 text-sm mb-4 product-desc-3">Walk with confidence and unparalleled elegance.</p>
-                            <div class="text-indigo-400 font-bold text-lg mb-4 price-tag" data-eur="59.99" data-usd="65.00">€59.99</div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الرجالي -->
+        <section>
+            <div class="border-b border-slate-800 pb-3 mb-8 flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                    <span>👔</span> <span class="sec-men-heading">Men's Section</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- منتج 4 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden bg-slate-800 relative">
+                            <img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=500&auto=format&fit=crop&q=60" alt="Men Jacket" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1 product-title-4">Men's Classic Jacket</h3>
+                            <p class="text-slate-400 text-sm mb-4 product-desc-4">Sophisticated and practical menswear for daily outings.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
@@ -159,12 +173,69 @@
                     </div>
                 </div>
 
+                <!-- منتج 5 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden bg-slate-800 relative">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=60" alt="Men Watch" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1 product-title-5">Luxury Men's Watch</h3>
+                            <p class="text-slate-400 text-sm mb-4 product-desc-5">Precision and elegance for the modern gentleman.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الإلكترونيات -->
+        <section>
+            <div class="border-b border-slate-800 pb-3 mb-8 flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                    <span>🔌</span> <span class="sec-tech-heading">Electronics & Gadgets</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- منتج 6 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden bg-slate-800 relative">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop&q=60" alt="Smartphone" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1 product-title-6">Next-Gen Smartphone</h3>
+                            <p class="text-slate-400 text-sm mb-4 product-desc-6">High performance, stunning camera, and modern design.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
+                    </div>
+                </div>
+
+                <!-- منتج 7 -->
+                <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden bg-slate-800 relative">
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&auto=format&fit=crop&q=60" alt="Laptop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1 product-title-7">Pro Ultra Laptop</h3>
+                            <p class="text-slate-400 text-sm mb-4 product-desc-7">Powerful processor and crystal-clear display for professionals.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg buy-btn">Buy Now</a>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- زر الواتساب العائم برقمك الخاص -->
+    <!-- زر الواتساب العائم -->
     <a href="https://wa.me/0033764026479?text=Hello%20paris-mode,%20I%20have%20an%20inquiry" target="_blank" 
        class="whatsapp-float fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition duration-300" 
        title="Contact us on WhatsApp">
@@ -186,7 +257,7 @@
         <p class="text-xs text-slate-500">Contact: wassmasster77@gmail.com | Phone: 0033764026479</p>
     </footer>
 
-    <!-- سكربت اللغات والتحويل الحركي والعملات -->
+    <!-- سكربت اللغات والترجمة الكاملة -->
     <script>
         function handleTilt(e, card) {
             const rect = card.getBoundingClientRect();
@@ -211,9 +282,15 @@
                 desc: 'Your premier destination for high-end fashion, clothing, and modern electronics.',
                 buy: 'Buy Now',
                 secWomen: "Women's Section & Handbags",
+                secMen: "Men's Section",
+                secTech: "Electronics & Gadgets",
                 p1Title: 'Luxury Leather Handbag', p1Desc: 'Elegant and trendy design crafted for perfection.',
                 p2Title: 'Chic Winter Jacket', p2Desc: 'Warm, stylish, and suitable for all occasions.',
                 p3Title: 'Classic High Heels', p3Desc: 'Walk with confidence and unparalleled elegance.',
+                p4Title: "Men's Classic Jacket", p4Desc: 'Sophisticated and practical menswear for daily outings.',
+                p5Title: "Luxury Men's Watch", p5Desc: 'Precision and elegance for the modern gentleman.',
+                p6Title: 'Next-Gen Smartphone', p6Desc: 'High performance, stunning camera, and modern design.',
+                p7Title: 'Pro Ultra Laptop', p7Desc: 'Powerful processor and crystal-clear display for professionals.',
                 footer: '© 2026 paris-mode. All rights reserved. Affiliate partner links included.'
             },
             ar: {
@@ -223,9 +300,15 @@
                 desc: 'وجهتكم الأولى للأزياء الراقية، الملابس العصرية، والإلكترونيات الحديثة.',
                 buy: 'اشتري الآن',
                 secWomen: "القسم النسائي والشناتي",
+                secMen: "القسم الرجالي",
+                secTech: "الإلكترونيات والأجهزة الذكية",
                 p1Title: 'حقيبة يد جلدية فاخرة', p1Desc: 'تصميم أنيق وعصري مصنوع بعناية فائقة.',
                 p2Title: 'جواكيت شتوية أنيقة', p2Desc: 'دافئة، عصرية، ومناسبة لكافة المناسبات.',
                 p3Title: 'أحذية كلاسيكية بكعب عالي', p3Desc: 'امشِ بثقة وأناقة لا مثيل لها.',
+                p4Title: 'جاكيت رجالي كلاسيكي', p4Desc: 'ملابس رجالية أنيقة وعملية للخروج اليومي.',
+                p5Title: 'ساعة رجالية فاخرة', p5Desc: 'دقة وأناقة للرجل العصري.',
+                p6Title: 'هاتف ذكي من الجيل القادم', p6Desc: 'أداء عالي، كاميرا مذهلة، وتصميم عصري.',
+                p7Title: 'لابتوب برو الاحترافي', p7Desc: 'معالج قوي وشاشة فائقة الوضوح للمحترفين.',
                 footer: '© 2026 paris-mode. جميع الحقوق محفوظة. يتضمن الموقع روابط تسويق بالعمولة.'
             },
             fr: {
@@ -235,9 +318,15 @@
                 desc: 'Votre destination privilégiée pour la haute couture, les vêtements et l’électronique.',
                 buy: 'Acheter',
                 secWomen: "Section Femmes & Sacs à main",
+                secMen: "Section Hommes",
+                secTech: "Électronique & Gadgets",
                 p1Title: 'Sac à main en cuir de luxe', p1Desc: 'Design élégant et tendance conçu pour la perfection.',
                 p2Title: 'Veste d’hiver chic', p2Desc: 'Chaud, élégant et adapté à toutes les occasions.',
                 p3Title: 'Escarpins classiques', p3Desc: 'Marchez avec confiance et élégance.',
+                p4Title: 'Veste classique pour hommes', p4Desc: 'Vêtements sophistiqués et pratiques pour hommes.',
+                p5Title: 'Montre de luxe pour hommes', p5Desc: 'Précision et élégance pour le gentleman moderne.',
+                p6Title: 'Smartphone nouvelle génération', p6Desc: 'Haute performance, appareil photo époustouflant.',
+                p7Title: 'Ordinateur portable Pro Ultra', p7Desc: 'Processeur puissant et écran cristallin.',
                 footer: '© 2026 paris-mode. Tous droits réservés. Liens partenaires affiliés inclus.'
             },
             de: {
@@ -247,9 +336,15 @@
                 desc: 'Ihr erstklassiges Ziel für High-End-Mode, Bekleidung und moderne Elektronik.',
                 buy: 'Jetzt kaufen',
                 secWomen: "Damenbereich & Handtaschen",
+                secMen: "Herrenbereich",
+                secTech: "Elektronik & Gadgets",
                 p1Title: 'Luxus Lederhandtasche', p1Desc: 'Elegantes und trendiges Design für Perfektion.',
                 p2Title: 'Schicke Winterjacke', p2Desc: 'Warm, stilvoll und für jeden Anlass geeignet.',
                 p3Title: 'Klassische High Heels', p3Desc: 'Gehen Sie mit Selbstvertrauen und Eleganz.',
+                p4Title: 'Klassische Herrenjacke', p4Desc: 'Anspruchsvolle und praktische Herrenbekleidung.',
+                p5Title: 'Luxus Herrenuhr', p5Desc: 'Präzision und Eleganz für den modernen Gentleman.',
+                p6Title: 'Smartphone der nächsten Generation', p6Desc: 'Hohe Leistung und atemberaubende Kamera.',
+                p7Title: 'Pro Ultra Laptop', p7Desc: 'Leistungsstarker Prozessor und kristallklares Display.',
                 footer: '© 2026 paris-mode. Alle Rechte vorbehalten. Affiliate-Links enthalten.'
             },
             nl: {
@@ -259,9 +354,15 @@
                 desc: 'Uw premier bestemming voor high-end mode, kleding en moderne elektronica.',
                 buy: 'Nu kopen',
                 secWomen: "Damessectie & Handtassen",
+                secMen: "Herensectie",
+                secTech: "Elektronica & Gadgets",
                 p1Title: 'Luxe Leren Handtas', p1Desc: 'Elegant en trendy ontwerp gemaakt voor perfectie.',
-                p2Title: 'Chique Winterjas', p2Desc: 'Warm, stijlvol en geschikt voor elke gelegenheid.',
+                p2Title: 'Chique Winterjas', p2Desc: 'Warm, stijlvoll en geschikt voor elke gelegenheid.',
                 p3Title: 'Klassieke Hoge Hakken', p3Desc: 'Loop met zelfvertrouwen en ongeëvenaarde elegantie.',
+                p4Title: 'Klassieke Herenjas', p4Desc: 'Verfijnde en praktische herenkleding.',
+                p5Title: 'Luxe Herenhorloge', p5Desc: 'Precisie en elegantie voor de moderne gentleman.',
+                p6Title: 'Smartphone van de Volgende Generatie', p6Desc: 'Hoge prestaties en verbluffende camera.',
+                p7Title: 'Pro Ultra Laptop', p7Desc: 'Krachtige processor en helder display.',
                 footer: '© 2026 paris-mode. Alle rechten voorbehouden. Inclusief affiliate links.'
             }
         };
@@ -275,14 +376,15 @@
             document.getElementById('top-banner').innerText = t.banner;
             document.getElementById('main-title').innerText = t.title;
             document.getElementById('main-desc').innerText = t.desc;
+            
             document.querySelector('.sec-women-heading').innerText = t.secWomen;
+            document.querySelector('.sec-men-heading').innerText = t.secMen;
+            document.querySelector('.sec-tech-heading').innerText = t.secTech;
 
-            document.querySelector('.product-title-1').innerText = t.p1Title;
-            document.querySelector('.product-desc-1').innerText = t.p1Desc;
-            document.querySelector('.product-title-2').innerText = t.p2Title;
-            document.querySelector('.product-desc-2').innerText = t.p2Desc;
-            document.querySelector('.product-title-3').innerText = t.p3Title;
-            document.querySelector('.product-desc-3').innerText = t.p3Desc;
+            for(let i = 1; i <= 7; i++) {
+                if(t['p' + i + 'Title']) document.querySelector('.product-title-' + i).innerText = t['p' + i + 'Title'];
+                if(t['p' + i + 'Desc']) document.querySelector('.product-desc-' + i).innerText = t['p' + i + 'Desc'];
+            }
 
             document.querySelectorAll('.buy-btn').forEach(el => el.innerText = t.buy);
             document.getElementById('footer-text').innerText = t.footer;
@@ -292,19 +394,6 @@
                     btn.className = 'px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition lang-btn';
                 } else {
                     btn.className = 'px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition lang-btn';
-                }
-            });
-        }
-
-        function changeCurrency() {
-            const currency = document.getElementById('currency-select').value;
-            document.querySelectorAll('.price-tag').forEach(tag => {
-                const eur = tag.getAttribute('data-eur');
-                const usd = tag.getAttribute('data-usd');
-                if(currency === 'USD') {
-                    tag.innerText = '$' + usd;
-                } else {
-                    tag.innerText = '€' + eur;
                 }
             });
         }
