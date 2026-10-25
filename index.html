@@ -22,13 +22,28 @@
         .whatsapp-float {
             animation: pulse-whatsapp 2s infinite;
         }
+        /* حركة الشريط الترحيبي المتحرك */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans min-h-screen relative">
 
-    <!-- شريط الترحيب العلوي -->
-    <div id="top-banner" class="bg-indigo-600 text-white text-xs font-semibold py-2 px-4 text-center tracking-wide">
-        Welcome to Paris-Mode | Exclusive Curated Selection & Trusted Affiliate Partners
+    <!-- شريط الترحيب المتحرك العلوي -->
+    <div class="bg-indigo-600 text-white text-xs font-semibold py-2 overflow-hidden relative">
+        <div class="marquee-container">
+            <span id="top-banner" class="marquee-text">Welcome to Paris-Mode | Exclusive Curated Selection & Trusted Affiliate Partners</span>
+        </div>
     </div>
 
     <!-- شريط التنقل العلوي -->
@@ -257,7 +272,7 @@
         <p class="text-xs text-slate-500">Contact: wassmasster77@gmail.com | Phone: 0033764026479</p>
     </footer>
 
-    <!-- سكربت اللغات والترجمة الكاملة -->
+    <!-- سكربت اللغات والترجمة الكاملة والشريط المتحرك -->
     <script>
         function handleTilt(e, card) {
             const rect = card.getBoundingClientRect();
@@ -295,7 +310,7 @@
             },
             ar: {
                 dir: 'rtl',
-                banner: 'مرحباً بكم في باريس-مود | تشكيلة مختارة بعناية عبر شركاء موثوقين',
+                banner: 'مرحباً بكم في باريس-مود | تشكيلة مختارة بعناية عبر شركاء موثوقين وخيارات تسويق بالعمولة',
                 title: 'مرحباً بكم في متجر paris-mode',
                 desc: 'وجهتكم الأولى للأزياء الراقية، الملابس العصرية، والإلكترونيات الحديثة.',
                 buy: 'اشتري الآن',
@@ -357,7 +372,7 @@
                 secMen: "Herensectie",
                 secTech: "Elektronica & Gadgets",
                 p1Title: 'Luxe Leren Handtas', p1Desc: 'Elegant en trendy ontwerp gemaakt voor perfectie.',
-                p2Title: 'Chique Winterjas', p2Desc: 'Warm, stijlvoll en geschikt voor elke gelegenheid.',
+                p2Title: 'Chique Winterjas', p2Desc: 'Warm, stijlvol en geschikt voor elke gelegenheid.',
                 p3Title: 'Klassieke Hoge Hakken', p3Desc: 'Loop met zelfvertrouwen en ongeëvenaarde elegantie.',
                 p4Title: 'Klassieke Herenjas', p4Desc: 'Verfijnde en praktische herenkleding.',
                 p5Title: 'Luxe Herenhorloge', p5Desc: 'Precisie en elegantie voor de moderne gentleman.',
@@ -389,7 +404,7 @@
             document.querySelectorAll('.buy-btn').forEach(el => el.innerText = t.buy);
             document.getElementById('footer-text').innerText = t.footer;
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            document.querySelectorAll('.lang-btn').btnAcross = document.querySelectorAll('.lang-btn').forEach(btn => {
                 if(btn.getAttribute('data-lang') === lang) {
                     btn.className = 'px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition lang-btn';
                 } else {
