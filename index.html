@@ -64,10 +64,10 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-7xl mx-auto px-4 py-10 space-y-12">
 
-        <!-- لوحة التحكم الإدارية لجميع الأقسام -->
+        <!-- لوحة التحكم الإدارية للأقسام المفصلة -->
         <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
             <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
-                <h3 id="admin-panel-title" class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> Multi-Department Creator (لوحة إدارة المنتجات)</h3>
+                <h3 id="admin-panel-title" class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> Detailed Department Creator (لوحة إدارة الأقسام الفرعية)</h3>
                 <span class="text-xs bg-indigo-600 text-white px-3 py-1 rounded-lg font-semibold">Admin Panel</span>
             </div>
 
@@ -75,12 +75,15 @@
                 
                 <div class="lg:col-span-6 space-y-4">
                     <div>
-                        <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم)</label>
+                        <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم الفرعي)</label>
                         <select id="admin-dept" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
-                            <option value="women" id="opt-women">👗 Women's Section & Handbags</option>
-                            <option value="lingerie" id="opt-lingerie">✨ Women's Lingerie Collection</option>
-                            <option value="men" id="opt-men">👔 Men's Section</option>
-                            <option value="tech" id="opt-tech">🔌 Electronics & Gadgets</option>
+                            <option value="handbags" id="opt-handbags">👜 قسم الشناتي النسائية (Handbags)</option>
+                            <option value="shoes" id="opt-shoes">👠 قسم الأحذية النسائية (Women's Shoes)</option>
+                            <option value="pants" id="opt-pants">👖 قسم البناطيل النسائية (Women's Pants)</option>
+                            <option value="lingerie" id="opt-lingerie">✨ قسم اللانجري النسائي (Lingerie)</option>
+                            <option value="men" id="opt-men">👔 القسم الرجالي (Men's Section)</option>
+                            <option value="appliances" id="opt-appliances">🏠 الأجهزة المنزلية (Home Appliances)</option>
+                            <option value="mobiles" id="opt-mobiles">📱 الموبايلات واللابتوبات (Mobiles & Laptops)</option>
                         </select>
                     </div>
 
@@ -132,22 +135,38 @@
             </div>
         </div>
 
-        <!-- عرض 1: المعرض الرئيسي لجميع الأقسام -->
+        <!-- عرض 1: المعرض الرئيسي لجميع الأقسام الفرعية -->
         <div id="gallery-view" class="space-y-16">
             <div class="text-center mb-6 space-y-3">
                 <h1 id="store-main-title" class="text-4xl font-black text-white">paris-mode Store</h1>
                 <p id="store-main-desc" class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view details, photos, and video reviews.</p>
             </div>
 
-            <!-- 1. القسم النسائي والشناتي -->
+            <!-- 1. قسم الشناتي النسائية -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-women-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👗</span> Women's Section & Handbags</h2>
+                    <h2 id="sec-handbags-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👜</span> Handbags Collection</h2>
                 </div>
-                <div id="grid-women" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="grid-handbags" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 2. قسم اللانجري النسائي -->
+            <!-- 2. قسم الأحذية النسائية -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👠</span> Women's Shoes</h2>
+                </div>
+                <div id="grid-shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- 3. قسم البناطيل النسائية -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-pants-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👖</span> Women's Pants</h2>
+                </div>
+                <div id="grid-pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- 4. قسم اللانجري النسائي -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400 flex items-center gap-2"><span>✨</span> Women's Lingerie Collection</h2>
@@ -155,7 +174,7 @@
                 <div id="grid-lingerie" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 3. القسم الرجالي -->
+            <!-- 5. القسم الرجالي -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-men-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👔</span> Men's Section</h2>
@@ -163,12 +182,20 @@
                 <div id="grid-men" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- 4. قسم الإلكترونيات -->
+            <!-- 6. قسم الأجهزة المنزلية -->
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-tech-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>🔌</span> Electronics & Gadgets</h2>
+                    <h2 id="sec-appliances-title" class="text-2xl font-bold text-teal-400 flex items-center gap-2"><span>🏠</span> Home Appliances</h2>
                 </div>
-                <div id="grid-tech" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="grid-appliances" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- 7. قسم الموبايلات واللابتوبات -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-mobiles-title" class="text-2xl font-bold text-cyan-400 flex items-center gap-2"><span>📱</span> Mobiles & Laptops</h2>
+                </div>
+                <div id="grid-mobiles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
         </div>
 
@@ -269,10 +296,10 @@
         </div>
     </footer>
 
-    <!-- سكربت الترجمة المتكاملة وإدارة المتجر -->
+    <!-- سكربت إدارة الأقسام الفرعية المفصلة والترجمة -->
     <script>
         const storeData = {
-            women: [
+            handbags: [
                 {
                     title: 'Luxury Parisian Leather Handbag',
                     images: [
@@ -282,6 +309,32 @@
                     ],
                     video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
                     specs: 'Crafted from premium genuine leather, featuring gold-tone hardware and spacious dual compartments.',
+                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                }
+            ],
+            shoes: [
+                {
+                    title: 'Classic High Heels & Footwear',
+                    images: [
+                        'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Walk with confidence and unparalleled elegance. Premium comfort sole.',
+                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                }
+            ],
+            pants: [
+                {
+                    title: 'Elegant Women\'s Casual Pants',
+                    images: [
+                        'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Comfortable fabric, modern high-waist cut suitable for all casual and formal occasions.',
                     link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
                 }
             ],
@@ -311,16 +364,29 @@
                     link: 'https://fr.shein.com/p-568031556.html'
                 }
             ],
-            tech: [
+            appliances: [
                 {
-                    title: 'Pro Ultra Smartphone & Gadgets',
+                    title: 'Smart Home Kitchen Appliance',
+                    images: [
+                        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'High efficiency home appliance designed to make daily kitchen tasks easier and faster.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ],
+            mobiles: [
+                {
+                    title: 'Pro Ultra Smartphone & Laptop',
                     images: [
                         'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60',
                         'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60',
                         'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&auto=format&fit=crop&q=60'
                     ],
                     video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'High performance processor, stunning camera, and modern futuristic design.',
+                    specs: 'High performance processor, stunning camera, and crystal clear display.',
                     link: 'https://fr.shein.com/p-568031556.html'
                 }
             ]
@@ -330,12 +396,15 @@
             en: {
                 dir: 'ltr',
                 banner: 'Welcome to Paris-Mode | Multi-Department Store & Trusted Affiliate Partners',
-                adminTitle: 'Multi-Department Creator (Admin Dashboard)',
+                adminTitle: 'Detailed Department Creator (Admin Dashboard)',
                 lblDept: 'Select Department',
-                optWomen: "Women's Section & Handbags",
+                optHandbags: 'Handbags Collection',
+                optShoes: "Women's Shoes",
+                optPants: "Women's Pants",
                 optLingerie: "Women's Lingerie Collection",
                 optMen: "Men's Section",
-                optTech: "Electronics & Gadgets",
+                optAppliances: 'Home Appliances',
+                optMobiles: 'Mobiles & Laptops',
                 lblTitle: 'Product Title',
                 lblSpecs: 'Description & Specs',
                 lblLink: 'Affiliate Link / Shop Now',
@@ -347,10 +416,13 @@
                 btnPublish: 'Publish Product to Store',
                 storeTitle: 'paris-mode Store',
                 storeDesc: 'Explore all departments. Click any product to view details, photos, and video reviews.',
-                secWomen: "Women's Section & Handbags",
+                secHandbags: 'Handbags Collection',
+                secShoes: "Women's Shoes",
+                secPants: "Women's Pants",
                 secLingerie: "Women's Lingerie Collection",
                 secMen: "Men's Section",
-                secTech: "Electronics & Gadgets",
+                secAppliances: 'Home Appliances',
+                secMobiles: 'Mobiles & Laptops',
                 btnDetails: 'Details',
                 viewText: 'View 3 photos & video →',
                 btnBack: '← Back to Store',
@@ -368,13 +440,16 @@
             },
             ar: {
                 dir: 'rtl',
-                banner: 'مرحباً بكم في باريس-مود | المتجر الشامل لأقسام التسويق بالعمولة والشركاء الموثوقين',
-                adminTitle: 'لوحة التحكم الإدارية (إضافة منتج جديد)',
-                lblDept: 'اختر القسم',
-                optWomen: 'القسم النسائي والشناتي',
-                optLingerie: 'قسم اللانجري النسائي الجديد',
+                banner: 'مرحباً بكم في باريس-مود | المتجر الشامل للأقسام الفرعية والتسويق بالعمولة',
+                adminTitle: 'لوحة التحكم الإدارية (إضافة منتج للأقسام الفرعية)',
+                lblDept: 'اختر القسم الفرعي',
+                optHandbags: 'قسم الشناتي النسائية',
+                optShoes: 'قسم الأحذية النسائية',
+                optPants: 'قسم البناطيل النسائية',
+                optLingerie: 'قسم اللانجري النسائي',
                 optMen: 'القسم الرجالي',
-                optTech: 'قسم الإلكترونيات والأجهزة',
+                optAppliances: 'قسم الأجهزة المنزلية',
+                optMobiles: 'قسم الموبايلات واللابتوبات',
                 lblTitle: 'عنوان المنتج',
                 lblSpecs: 'الوصف والمواصفات',
                 lblLink: 'رابط التسويق بالعمولة (Affiliate Link)',
@@ -383,13 +458,16 @@
                 lblImg2: 'الصورة الثانية',
                 lblImg3: 'الصورة الثالثة',
                 lblVid: 'فيديو المنتج (MP4)',
-                btnPublish: 'نشر المنتج في المتجر فوراً',
+                btnPublish: 'نشر المنتج في القسم فوراً',
                 storeTitle: 'متجر paris-mode الشامل',
-                storeDesc: 'استعرض جميع الأقسام. انقر على أي منتج لعرض التفاصيل، الصور الثلاث، وفيديوهات المراجعة.',
-                secWomen: 'القسم النسائي والشناتي',
-                secLingerie: 'تشكيلة اللانجري النسائي',
+                storeDesc: 'استعرض جميع الأقسام الفرعية. انقر على أي منتج لعرض التفاصيل، الصور الثلاث، وفيديوهات المراجعة.',
+                secHandbags: 'قسم الشناتي النسائية',
+                secShoes: 'قسم الأحذية النسائية',
+                secPants: 'قسم البناطيل النسائية',
+                secLingerie: 'قسم اللانجري النسائي',
                 secMen: 'القسم الرجالي',
-                secTech: 'الإلكترونيات والأجهزة الذكية',
+                secAppliances: 'قسم الأجهزة المنزلية',
+                secMobiles: 'قسم الموبايلات واللابتوبات',
                 btnDetails: 'التفاصيل',
                 viewText: 'عرض 3 صور والفيديو ←',
                 btnBack: '← العودة إلى المتجر الرئيسي',
@@ -408,12 +486,15 @@
             fr: {
                 dir: 'ltr',
                 banner: 'Bienvenue sur Paris-Mode | Boutique multi-départements & Partenaires',
-                adminTitle: 'Créateur de produits (Panneau d’administration)',
-                lblDept: 'Sélectionner le département',
-                optWomen: 'Section Femmes & Sacs à main',
-                optLingerie: 'Collection Lingerie pour Femmes',
+                adminTitle: 'Créateur de produits par sous-section',
+                lblDept: 'Sélectionner la sous-section',
+                optHandbags: 'Collection de sacs à main',
+                optShoes: 'Chaussures pour femmes',
+                optPants: 'Pantalons pour femmes',
+                optLingerie: 'Collection Lingerie',
                 optMen: 'Section Hommes',
-                optTech: 'Électronique & Gadgets',
+                optAppliances: 'Appareils ménagers',
+                optMobiles: 'Mobiles et ordinateurs portables',
                 lblTitle: 'Titre du produit',
                 lblSpecs: 'Description et spécifications',
                 lblLink: 'Lien d’affiliation',
@@ -424,11 +505,14 @@
                 lblVid: 'Vidéo du produit (MP4)',
                 btnPublish: 'Publier le produit',
                 storeTitle: 'Boutique paris-mode',
-                storeDesc: 'Explorez tous les départements. Cliquez sur un produit pour voir les détails et vidéos.',
-                secWomen: 'Section Femmes & Sacs à main',
-                secLingerie: 'Collection Lingerie pour Femmes',
+                storeDesc: 'Explorez tous les départements. Cliquez sur un produit pour voir les détails.',
+                secHandbags: 'Collection de sacs à main',
+                secShoes: 'Chaussures pour femmes',
+                secPants: 'Pantalons pour femmes',
+                secLingerie: 'Collection Lingerie',
                 secMen: 'Section Hommes',
-                secTech: 'Électronique & Gadgets',
+                secAppliances: 'Appareils ménagers',
+                secMobiles: 'Mobiles et ordinateurs portables',
                 btnDetails: 'Détails',
                 viewText: 'Voir 3 photos et vidéo →',
                 btnBack: '← Retour à la boutique',
@@ -447,12 +531,15 @@
             de: {
                 dir: 'ltr',
                 banner: 'Willkommen bei Paris-Mode | Multi-Department Store & Partner',
-                adminTitle: 'Produkt-Creator (Admin-Panel)',
-                lblDept: 'Abteilung auswählen',
-                optWomen: 'Damenbereich & Handtaschen',
+                adminTitle: 'Produkt-Creator für Unterabteilungen',
+                lblDept: 'Unterabteilung auswählen',
+                optHandbags: 'Handtaschen-Kollektion',
+                optShoes: 'Damen-Schuhe',
+                optPants: 'Damen-Hosen',
                 optLingerie: 'Damen-Lingerie-Kollektion',
                 optMen: 'Herrenbereich',
-                optTech: 'Elektronik & Gadgets',
+                optAppliances: 'Haushaltsgeräte',
+                optMobiles: 'Handys & Laptops',
                 lblTitle: 'Produkttitel',
                 lblSpecs: 'Beschreibung & Spezifikationen',
                 lblLink: 'Affiliate-Link',
@@ -464,10 +551,13 @@
                 btnPublish: 'Produkt veröffentlichen',
                 storeTitle: 'paris-mode Store',
                 storeDesc: 'Entdecken Sie alle Abteilungen. Klicken Sie auf ein Produkt für Details.',
-                secWomen: 'Damenbereich & Handtaschen',
+                secHandbags: 'Handtaschen-Kollektion',
+                secShoes: 'Damen-Schuhe',
+                secPants: 'Damen-Hosen',
                 secLingerie: 'Damen-Lingerie-Kollektion',
                 secMen: 'Herrenbereich',
-                secTech: 'Elektronik & Gadgets',
+                secAppliances: 'Haushaltsgeräte',
+                secMobiles: 'Handys & Laptops',
                 btnDetails: 'Details',
                 viewText: '3 Fotos & Video anzeigen →',
                 btnBack: '← Zurück zum Shop',
@@ -486,12 +576,15 @@
             nl: {
                 dir: 'ltr',
                 banner: 'Welkom bij Paris-Mode | Multi-Department Store & Partners',
-                adminTitle: 'Product Creator (Beheerderspaneel)',
-                lblDept: 'Selecteer Afdeling',
-                optWomen: 'Damessectie & Handtassen',
+                adminTitle: 'Product Creator voor Subsecties',
+                lblDept: 'Selecteer Subafdeling',
+                optHandbags: 'Handtassen Collectie',
+                optShoes: 'Dames Schoenen',
+                optPants: 'Dames Broeken',
                 optLingerie: 'Dames Lingerie Collectie',
                 optMen: 'Herensectie',
-                optTech: 'Elektronica & Gadgets',
+                optAppliances: 'Huishoudelijke Apparaten',
+                optMobiles: 'Mobieltjes & Laptops',
                 lblTitle: 'Producttitel',
                 lblSpecs: 'Beschrijving & Specificaties',
                 lblLink: 'Affiliate Link',
@@ -503,10 +596,13 @@
                 btnPublish: 'Product publiceren',
                 storeTitle: 'paris-mode Winkel',
                 storeDesc: 'Verken alle afdelingen. Klik op een product voor details, foto’s en video’s.',
-                secWomen: 'Damessectie & Handtassen',
+                secHandbags: 'Handtassen Collectie',
+                secShoes: 'Dames Schoenen',
+                secPants: 'Dames Broeken',
                 secLingerie: 'Dames Lingerie Collectie',
                 secMen: 'Herensectie',
-                secTech: 'Elektronica & Gadgets',
+                secAppliances: 'Huishoudelijke Apparaten',
+                secMobiles: 'Mobieltjes & Laptops',
                 btnDetails: 'Details',
                 viewText: 'Bekijk 3 foto’s & video →',
                 btnBack: '← Terug naar winkel',
@@ -533,10 +629,14 @@
             document.getElementById('top-banner').innerText = t.banner;
             document.getElementById('admin-panel-title').innerHTML = `<span>📦</span> ${t.adminTitle}`;
             document.getElementById('lbl-dept').innerText = t.lblDept;
-            document.getElementById('opt-women').innerText = t.optWomen;
+            document.getElementById('opt-handbags').innerText = t.optHandbags;
+            document.getElementById('opt-shoes').innerText = t.optShoes;
+            document.getElementById('opt-pants').innerText = t.optPants;
             document.getElementById('opt-lingerie').innerText = t.optLingerie;
             document.getElementById('opt-men').innerText = t.optMen;
-            document.getElementById('opt-tech').innerText = t.optTech;
+            document.getElementById('opt-appliances').innerText = t.optAppliances;
+            document.getElementById('opt-mobiles').innerText = t.optMobiles;
+
             document.getElementById('lbl-title').innerText = t.lblTitle;
             document.getElementById('lbl-specs').innerText = t.lblSpecs;
             document.getElementById('lbl-link').innerText = t.lblLink;
@@ -549,10 +649,13 @@
 
             document.getElementById('store-main-title').innerText = t.storeTitle;
             document.getElementById('store-main-desc').innerText = t.storeDesc;
-            document.getElementById('sec-women-title').innerHTML = `<span>👗</span> ${t.secWomen}`;
+            document.getElementById('sec-handbags-title').innerHTML = `<span>👜</span> ${t.secHandbags}`;
+            document.getElementById('sec-shoes-title').innerHTML = `<span>👠</span> ${t.secShoes}`;
+            document.getElementById('sec-pants-title').innerHTML = `<span>👖</span> ${t.secPants}`;
             document.getElementById('sec-lingerie-title').innerHTML = `<span>✨</span> ${t.secLingerie}`;
             document.getElementById('sec-men-title').innerHTML = `<span>👔</span> ${t.secMen}`;
-            document.getElementById('sec-tech-title').innerHTML = `<span>🔌</span> ${t.secTech}`;
+            document.getElementById('sec-appliances-title').innerHTML = `<span>🏠</span> ${t.secAppliances}`;
+            document.getElementById('sec-mobiles-title').innerHTML = `<span>📱</span> ${t.secMobiles}`;
 
             document.getElementById('btn-back').innerHTML = `← ${t.btnBack}`;
             document.getElementById('lbl-vid-review').innerText = t.lblVidReview;
@@ -650,7 +753,7 @@
                 document.getElementById('img3-file').value = '';
                 document.getElementById('video-file').value = '';
 
-                alert('تم نشر المنتج بنجاح في القسم المحدد!');
+                alert('تم نشر المنتج بنجاح في القسم الفرعي المختار!');
             }
         }
 
@@ -658,10 +761,13 @@
             const currentLang = document.getElementById('html-root').getAttribute('lang') || 'en';
             const t = translations[currentLang];
 
-            renderGrid('women', 'grid-women', t.viewText, t.btnDetails);
+            renderGrid('handbags', 'grid-handbags', t.viewText, t.btnDetails);
+            renderGrid('shoes', 'grid-shoes', t.viewText, t.btnDetails);
+            renderGrid('pants', 'grid-pants', t.viewText, t.btnDetails);
             renderGrid('lingerie', 'grid-lingerie', t.viewText, t.btnDetails);
             renderGrid('men', 'grid-men', t.viewText, t.btnDetails);
-            renderGrid('tech', 'grid-tech', t.viewText, t.btnDetails);
+            renderGrid('appliances', 'grid-appliances', t.viewText, t.btnDetails);
+            renderGrid('mobiles', 'grid-mobiles', t.viewText, t.btnDetails);
         }
 
         function renderGrid(deptKey, gridId, viewText, detailsText) {
