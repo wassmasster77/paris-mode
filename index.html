@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paris-mode - Handbags Collection</title>
+    <title>paris-mode - Multi-Department Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .card-3d-tilt {
@@ -41,7 +41,7 @@
     <!-- شريط الترحيب المتحرك العلوي -->
     <div class="bg-indigo-600 text-white text-xs font-semibold py-2 overflow-hidden relative">
         <div class="marquee-container">
-            <span id="top-banner" class="marquee-text">Welcome to Paris-Mode | Exclusive Handbags Collection & Trusted Affiliate Partners</span>
+            <span id="top-banner" class="marquee-text">Welcome to Paris-Mode | Multi-Department Store & Trusted Affiliate Partners</span>
         </div>
     </div>
 
@@ -64,60 +64,63 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-7xl mx-auto px-4 py-10 space-y-12">
 
-        <!-- لوحة التحكم الإدارية الاحترافية -->
+        <!-- لوحة التحكم الإدارية لجميع الأقسام -->
         <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
             <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> إضافة منتج جديد (Product Creator Dashboard)</h3>
+                <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> إضافة منتج لأي قسم (Multi-Department Creator)</h3>
                 <span class="text-xs bg-indigo-600 text-white px-3 py-1 rounded-lg font-semibold">Admin Panel</span>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- الجانب الأيسر: حقول النصوص -->
+                <!-- الجانب الأيسر: حقول النصوص واختيار القسم -->
                 <div class="lg:col-span-6 space-y-4">
                     <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1">اختر القسم (Select Department)</label>
+                        <select id="admin-dept" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                            <option value="women">👗 القسم النسائي والشناتي (Women & Handbags)</option>
+                            <option value="lingerie">✨ اللانجري النسائي (Women's Lingerie)</option>
+                            <option value="men">👔 القسم الرجالي (Men's Section)</option>
+                            <option value="tech">🔌 الإلكترونيات والأجهزة (Electronics)</option>
+                        </select>
+                    </div>
+
+                    <div>
                         <label class="block text-xs font-bold text-slate-400 mb-1">العنوان (Product Title)</label>
-                        <input type="text" id="admin-title" placeholder="أخبر الجميع عن اسم المنتج..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="admin-title" placeholder="اسم المنتج..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-400 mb-1">الوصف والمواصفات (Description & Specs)</label>
-                        <textarea id="admin-specs" rows="3" placeholder="تفاصيل المنتج والدقة والمميزات..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
+                        <textarea id="admin-specs" rows="2" placeholder="تفاصيل المنتج والدقة..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-400 mb-1">رابط الأفلييت / تسوق الآن (Affiliate Link)</label>
-                        <input type="text" id="admin-link" placeholder="إضافة رابط التسويق بالعمولة هنا..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="admin-link" placeholder="رابط التسويق بالعمولة..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
                 </div>
 
-                <!-- الجانب الأيمن: أزرار رفع الصور الثلاث والفيديو بشكل مستقل ومنظم -->
+                <!-- الجانب الأيمن: رفع الصور الثلاث والفيديو -->
                 <div class="lg:col-span-6 space-y-4 bg-slate-800/40 p-5 rounded-3xl border border-slate-800">
-                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-3">رفع الوسائط من جهازك (Media Upload):</h4>
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-3">رفع الوسائط (Media Upload):</h4>
                     
                     <div class="space-y-3">
-                        <!-- رفع الصورة 1 -->
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
                             <span class="text-xs font-bold text-white">📷 الصورة الرئيسية 1</span>
-                            <input type="file" id="img1-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
+                            <input type="file" id="img1-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white cursor-pointer">
                         </div>
-
-                        <!-- رفع الصورة 2 -->
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
                             <span class="text-xs font-bold text-white">📸 الصورة الثانية 2</span>
-                            <input type="file" id="img2-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
+                            <input type="file" id="img2-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white cursor-pointer">
                         </div>
-
-                        <!-- رفع الصورة 3 -->
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
                             <span class="text-xs font-bold text-white">🖼️ الصورة الثالثة 3</span>
-                            <input type="file" id="img3-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
+                            <input type="file" id="img3-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white cursor-pointer">
                         </div>
-
-                        <!-- رفع الفيديو -->
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
                             <span class="text-xs font-bold text-white">🎬 فيديو المنتج (MP4)</span>
-                            <input type="file" id="video-file" accept="video/mp4" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-600 file:text-white hover:file:bg-emerald-500 cursor-pointer">
+                            <input type="file" id="video-file" accept="video/mp4" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-600 file:text-white cursor-pointer">
                         </div>
                     </div>
                 </div>
@@ -126,28 +129,55 @@
 
             <div class="mt-8 pt-6 border-t border-slate-800">
                 <button onclick="addNewProduct()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2">
-                    <span>✨</span> نشر المنتج في المتجر (Publish Product)
+                    <span>✨</span> نشر المنتج في القسم المحدد (Publish Product)
                 </button>
             </div>
         </div>
 
-        <!-- عرض 1: شبكة قسم الشناتي (Gallery View) -->
-        <div id="gallery-view">
-            <div class="text-center mb-10 space-y-3">
-                <h1 class="text-4xl font-black text-white">Parisian Handbags Gallery</h1>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">Explore our curated collection. Click any bag to view details, 3 photos, video reviews, and shop via affiliate links.</p>
+        <!-- عرض 1: المعرض الرئيسي (جميع الأقسام) -->
+        <div id="gallery-view" class="space-y-16">
+            <div class="text-center mb-6 space-y-3">
+                <h1 class="text-4xl font-black text-white">paris-mode Store</h1>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view 3 photos, video reviews, and shop via affiliate links.</p>
             </div>
 
-            <!-- شبكة المنتجات -->
-            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- المنتجات تضاف هنا تلقائياً -->
-            </div>
+            <!-- 1. القسم النسائي والشناتي -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👗</span> Women's Section & Handbags</h2>
+                </div>
+                <div id="grid-women" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- 2. قسم اللانجري النسائي -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-pink-400 flex items-center gap-2"><span>✨</span> Women's Lingerie Collection</h2>
+                </div>
+                <div id="grid-lingerie" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- 3. القسم الرجالي -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👔</span> Men's Section</h2>
+                </div>
+                <div id="grid-men" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- 4. قسم الإلكترونيات -->
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>🔌</span> Electronics & Gadgets</h2>
+                </div>
+                <div id="grid-tech" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
         </div>
 
         <!-- عرض 2: صفحة تفاصيل المنتج الفردي (Product Detail View) -->
         <div id="product-detail-view" class="hidden space-y-8">
             <button onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">
-                ← Back to Gallery (العودة للقسم)
+                ← Back to Store (العودة للمتجر)
             </button>
 
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -165,9 +195,7 @@
                     <!-- فيديو المنتج -->
                     <div class="mt-6">
                         <h4 class="text-xs font-bold text-indigo-400 mb-2 uppercase tracking-wide">Product Video Review (فيديو المنتج):</h4>
-                        <div id="video-container" class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center">
-                            <!-- يتم حقن الفيديو هنا ديناميكياً -->
-                        </div>
+                        <div id="video-container" class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center"></div>
                     </div>
                 </div>
 
@@ -250,23 +278,65 @@
         </div>
     </footer>
 
-    <!-- سكربت المعالجة البرمجية الدقيقة لرفع 3 صور مختلفة وفيديو -->
+    <!-- سكربت إدارة الأقسام والمنتجات المتعددة -->
     <script>
-        let products = [
-            {
-                title: 'Luxury Parisian Leather Handbag',
-                images: [
-                    'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60',
-                    'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=60',
-                    'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60'
-                ],
-                video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                specs: 'Crafted from premium genuine leather, featuring gold-tone hardware, spacious dual compartments, and an adjustable shoulder strap.',
-                link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-            }
-        ];
+        let storeData = {
+            women: [
+                {
+                    title: 'Luxury Parisian Leather Handbag',
+                    images: [
+                        'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Crafted from premium genuine leather, featuring gold-tone hardware and spacious dual compartments.',
+                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                }
+            ],
+            lingerie: [
+                {
+                    title: 'Satin Elegant Lingerie Set',
+                    images: [
+                        'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Luxurious satin fabric designed for ultimate comfort and elegance.',
+                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                }
+            ],
+            men: [
+                {
+                    title: "Men's Classic Jacket",
+                    images: [
+                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://fr.shein.com/p-568031556.html',
+                    specs: 'Sophisticated and practical menswear for daily outings and winter seasons.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ],
+            tech: [
+                {
+                    title: 'Pro Ultra Smartphone & Gadgets',
+                    images: [
+                        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'High performance processor, stunning camera, and modern futuristic design.',
+                    link: 'https://fr.shein.com/p-568031556.html'
+                }
+            ]
+        };
 
         function addNewProduct() {
+            const dept = document.getElementById('admin-dept').value;
             const title = document.getElementById('admin-title').value;
             const link = document.getElementById('admin-link').value;
             const specs = document.getElementById('admin-specs').value;
@@ -277,7 +347,7 @@
             const videoFile = document.getElementById('video-file').files[0];
 
             if(!title || !link || !file1) {
-                alert('الرجاء إدخال اسم المنتج، رابط الأفلييت، والصورة الرئيسية الأولى على الأقل!');
+                alert('الرجاء إدخال اسم المنتج، رابط الأفلييت، والصورة الأولى على الأقل!');
                 return;
             }
 
@@ -291,43 +361,28 @@
 
             r1.onload = function(e1) {
                 imagesArr[0] = e1.target.result;
-                imagesArr[1] = e1.target.result; // افتراضي في حال لم ترفع الثانية
-                imagesArr[2] = e1.target.result; // افتراضي في حال لم ترفع الثالثة
+                imagesArr[1] = e1.target.result;
+                imagesArr[2] = e1.target.result;
 
                 if(file2) {
-                    r2.onload = function(e2) {
-                        imagesArr[1] = e2.target.result;
-                        processImage3();
-                    }
+                    r2.onload = function(e2) { imagesArr[1] = e2.target.result; processImage3(); }
                     r2.readAsDataURL(file2);
-                } else {
-                    processImage3();
-                }
+                } else { processImage3(); }
             };
             r1.readAsDataURL(file1);
 
             function processImage3() {
                 if(file3) {
-                    r3.onload = function(e3) {
-                        imagesArr[2] = e3.target.result;
-                        processVideo();
-                    }
+                    r3.onload = function(e3) { imagesArr[2] = e3.target.result; processVideo(); }
                     r3.readAsDataURL(file3);
-                } else {
-                    processVideo();
-                }
+                } else { processVideo(); }
             }
 
             function processVideo() {
                 if(videoFile) {
-                    rv.onload = function(ev) {
-                        videoResult = ev.target.result;
-                        saveProductFinal(imagesArr, videoResult);
-                    }
+                    rv.onload = function(ev) { videoResult = ev.target.result; saveProductFinal(imagesArr, videoResult); }
                     rv.readAsDataURL(videoFile);
-                } else {
-                    saveProductFinal(imagesArr, videoResult);
-                }
+                } else { saveProductFinal(imagesArr, videoResult); }
             }
 
             function saveProductFinal(finalImgs, finalVid) {
@@ -335,15 +390,14 @@
                     title: title,
                     images: finalImgs,
                     video: finalVid,
-                    specs: specs || 'High quality trendy fashion item.',
+                    specs: specs || 'High quality trendy item.',
                     link: link
                 };
 
-                products.unshift(newProd);
-                renderProducts();
+                storeData[dept].unshift(newProd);
+                renderStore();
                 goHome();
 
-                // تفريغ الحقول بالكامل بعد النشر
                 document.getElementById('admin-title').value = '';
                 document.getElementById('admin-link').value = '';
                 document.getElementById('admin-specs').value = '';
@@ -352,21 +406,28 @@
                 document.getElementById('img3-file').value = '';
                 document.getElementById('video-file').value = '';
 
-                alert('تم نشر المنتج بنجاح مع صوره المختلفة وفيديو الخاص به!');
+                alert('تم نشر المنتج بنجاح في القسم المحدد!');
             }
         }
 
-        function renderProducts() {
-            const grid = document.getElementById('products-grid');
+        function renderStore() {
+            renderGrid('women', 'grid-women');
+            renderGrid('lingerie', 'grid-lingerie');
+            renderGrid('men', 'grid-men');
+            renderGrid('tech', 'grid-tech');
+        }
+
+        function renderGrid(deptKey, gridId) {
+            const grid = document.getElementById(gridId);
             grid.innerHTML = '';
-            products.forEach((p, index) => {
+            storeData[deptKey].forEach((p, index) => {
                 grid.innerHTML += `
-                    <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between" onclick="openProduct(${index})">
+                    <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between" onclick="openProduct('${deptKey}', ${index})">
                         <div class="h-64 overflow-hidden bg-slate-800 relative">
                             <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
                                 <div>
-                                    <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">Handbag</span>
+                                    <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">${deptKey}</span>
                                     <h3 class="text-xl font-bold text-white">${p.title}</h3>
                                 </div>
                             </div>
@@ -380,8 +441,8 @@
             });
         }
 
-        function openProduct(index) {
-            const p = products[index];
+        function openProduct(deptKey, index) {
+            const p = storeData[deptKey][index];
             document.getElementById('gallery-view').classList.add('hidden');
             document.getElementById('product-detail-view').classList.remove('hidden');
 
@@ -454,16 +515,16 @@
 
         function setLanguage(lang) {
             const translations = {
-                en: { banner: 'Welcome to Paris-Mode | Exclusive Handbags Collection & Trusted Affiliate Partners' },
-                ar: { banner: 'مرحباً بكم في باريس-مود | تشكيلة الشناتي الحصرية وخيارات التسويق بالعمولة' },
-                fr: { banner: 'Bienvenue sur Paris-Mode | Collection exclusive de sacs à main' },
-                de: { banner: 'Willkommen bei Paris-Mode | Exklusive Handtaschen-Kollektion' },
-                nl: { banner: 'Welkom bij Paris-Mode | Exclusieve Handtassen Collectie' }
+                en: { banner: 'Welcome to Paris-Mode | Multi-Department Store & Trusted Affiliate Partners' },
+                ar: { banner: 'مرحباً بكم في باريس-مود | المتجر الشامل لأقسام التسويق بالعمولة' },
+                fr: { banner: 'Bienvenue sur Paris-Mode | Boutique multi-départements' },
+                de: { banner: 'Willkommen bei Paris-Mode | Multi-Department Store' },
+                nl: { banner: 'Welkom bij Paris-Mode | Multi-Department Store' }
             };
             document.getElementById('top-banner').innerText = translations[lang].banner;
         }
 
-        renderProducts();
+        renderStore();
     </script>
 </body>
 </html>
