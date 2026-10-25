@@ -64,7 +64,7 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-7xl mx-auto px-4 py-10 space-y-12">
 
-        <!-- لوحة التحكم الاحترافية لإضافة المنتجات (مطابقة لتصميمك) -->
+        <!-- لوحة التحكم الإدارية الاحترافية -->
         <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
             <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
                 <h3 class="text-xl font-bold text-white flex items-center gap-2"><span>📦</span> إضافة منتج جديد (Product Creator Dashboard)</h3>
@@ -73,55 +73,51 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- الجانب الأيسر/الوسط: حقول الإدخال (العنوان، الوصف، الرابط، المواصفات) -->
-                <div class="lg:col-span-7 space-y-4">
+                <!-- الجانب الأيسر: حقول النصوص -->
+                <div class="lg:col-span-6 space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-400 mb-1">العنوان (Product Title)</label>
-                        <input type="text" id="admin-title" placeholder="أخبر الجميع عن قصة منشورك أو منتجك..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="admin-title" placeholder="أخبر الجميع عن اسم المنتج..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1">الوصف (Description & Specs)</label>
-                        <textarea id="admin-specs" rows="3" placeholder="صفقة منشورك أو تفاصيل المنتج الدقيقة..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
+                        <label class="block text-xs font-bold text-slate-400 mb-1">الوصف والمواصفات (Description & Specs)</label>
+                        <textarea id="admin-specs" rows="3" placeholder="تفاصيل المنتج والدقة والمميزات..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-400 mb-1">رابط الأفلييت / تسوق الآن (Affiliate Link)</label>
                         <input type="text" id="admin-link" placeholder="إضافة رابط التسويق بالعمولة هنا..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1">رابط فيديو المنتج (YouTube Embed URL)</label>
-                        <input type="text" id="admin-video" placeholder="https://www.youtube.com/embed/..." class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    </div>
                 </div>
 
-                <!-- الجانب الأيمن: صندوق رفع الوسائط (تحميل الصور من جهازك) -->
-                <div class="lg:col-span-5 space-y-4">
-                    <label class="block text-xs font-bold text-slate-400 mb-1">تحميل الوسائط (اختر 3 صور للمنتج من جهازك)</label>
+                <!-- الجانب الأيمن: أزرار رفع الصور الثلاث والفيديو بشكل مستقل ومنظم -->
+                <div class="lg:col-span-6 space-y-4 bg-slate-800/40 p-5 rounded-3xl border border-slate-800">
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-3">رفع الوسائط من جهازك (Media Upload):</h4>
                     
-                    <div class="border-2 border-dashed border-slate-700 bg-slate-800/50 hover:bg-slate-800 rounded-3xl p-8 text-center cursor-pointer transition flex flex-col items-center justify-center space-y-3 relative" onclick="document.getElementById('file-input').click()">
-                        <div class="w-14 h-14 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center text-2xl font-bold">
-                            🖼️
+                    <div class="space-y-3">
+                        <!-- رفع الصورة 1 -->
+                        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
+                            <span class="text-xs font-bold text-white">📷 الصورة الرئيسية 1</span>
+                            <input type="file" id="img1-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
                         </div>
-                        <div class="space-y-1">
-                            <p class="text-sm font-bold text-white">انقر لتحميل الوسائط أو ارفع حتى 3 صور</p>
-                            <p class="text-xs text-slate-400">PNG و JPG حتى 20 ميجابايت</p>
-                        </div>
-                        <!-- حقل رفع الملفات المخفي -->
-                        <input type="file" id="file-input" multiple accept="image/*" class="hidden" onchange="handleFiles(this)">
-                    </div>
 
-                    <!-- معاينة الصور المرفوعة -->
-                    <div id="preview-container" class="grid grid-cols-3 gap-2 hidden">
-                        <div class="h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
-                            <img id="prev-0" src="" class="w-full h-full object-cover">
+                        <!-- رفع الصورة 2 -->
+                        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
+                            <span class="text-xs font-bold text-white">📸 الصورة الثانية 2</span>
+                            <input type="file" id="img2-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
                         </div>
-                        <div class="h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
-                            <img id="prev-1" src="" class="w-full h-full object-cover">
+
+                        <!-- رفع الصورة 3 -->
+                        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
+                            <span class="text-xs font-bold text-white">🖼️ الصورة الثالثة 3</span>
+                            <input type="file" id="img3-file" accept="image/*" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
                         </div>
-                        <div class="h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
-                            <img id="prev-2" src="" class="w-full h-full object-cover">
+
+                        <!-- رفع الفيديو -->
+                        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
+                            <span class="text-xs font-bold text-white">🎬 فيديو المنتج (MP4)</span>
+                            <input type="file" id="video-file" accept="video/mp4" class="text-xs text-slate-400 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-600 file:text-white hover:file:bg-emerald-500 cursor-pointer">
                         </div>
                     </div>
                 </div>
@@ -169,8 +165,8 @@
                     <!-- فيديو المنتج -->
                     <div class="mt-6">
                         <h4 class="text-xs font-bold text-indigo-400 mb-2 uppercase tracking-wide">Product Video Review (فيديو المنتج):</h4>
-                        <div class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
-                            <iframe id="detail-video" src="" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                        <div id="video-container" class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center">
+                            <!-- يتم حقن الفيديو هنا ديناميكياً -->
                         </div>
                     </div>
                 </div>
@@ -254,10 +250,8 @@
         </div>
     </footer>
 
-    <!-- سكربت إدارة الرفع والمنتجات -->
+    <!-- سكربت المعالجة البرمجية الدقيقة لرفع 3 صور مختلفة وفيديو -->
     <script>
-        let uploadedImages = [];
-
         let products = [
             {
                 title: 'Luxury Parisian Leather Handbag',
@@ -272,21 +266,93 @@
             }
         ];
 
-        function handleFiles(input) {
-            uploadedImages = [];
-            if (input.files) {
-                const filesCount = Math.min(input.files.length, 3);
-                const container = document.getElementById('preview-container');
-                container.classList.remove('hidden');
+        function addNewProduct() {
+            const title = document.getElementById('admin-title').value;
+            const link = document.getElementById('admin-link').value;
+            const specs = document.getElementById('admin-specs').value;
 
-                for (let i = 0; i < filesCount; i++) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        uploadedImages.push(e.target.result);
-                        document.getElementById('prev-' + i).src = e.target.result;
+            const file1 = document.getElementById('img1-file').files[0];
+            const file2 = document.getElementById('img2-file').files[0];
+            const file3 = document.getElementById('img3-file').files[0];
+            const videoFile = document.getElementById('video-file').files[0];
+
+            if(!title || !link || !file1) {
+                alert('الرجاء إدخال اسم المنتج، رابط الأفلييت، والصورة الرئيسية الأولى على الأقل!');
+                return;
+            }
+
+            let imagesArr = [];
+            let videoResult = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+
+            const r1 = new FileReader();
+            const r2 = new FileReader();
+            const r3 = new FileReader();
+            const rv = new FileReader();
+
+            r1.onload = function(e1) {
+                imagesArr[0] = e1.target.result;
+                imagesArr[1] = e1.target.result; // افتراضي في حال لم ترفع الثانية
+                imagesArr[2] = e1.target.result; // افتراضي في حال لم ترفع الثالثة
+
+                if(file2) {
+                    r2.onload = function(e2) {
+                        imagesArr[1] = e2.target.result;
+                        processImage3();
                     }
-                    reader.readAsDataURL(input.files[i]);
+                    r2.readAsDataURL(file2);
+                } else {
+                    processImage3();
                 }
+            };
+            r1.readAsDataURL(file1);
+
+            function processImage3() {
+                if(file3) {
+                    r3.onload = function(e3) {
+                        imagesArr[2] = e3.target.result;
+                        processVideo();
+                    }
+                    r3.readAsDataURL(file3);
+                } else {
+                    processVideo();
+                }
+            }
+
+            function processVideo() {
+                if(videoFile) {
+                    rv.onload = function(ev) {
+                        videoResult = ev.target.result;
+                        saveProductFinal(imagesArr, videoResult);
+                    }
+                    rv.readAsDataURL(videoFile);
+                } else {
+                    saveProductFinal(imagesArr, videoResult);
+                }
+            }
+
+            function saveProductFinal(finalImgs, finalVid) {
+                const newProd = {
+                    title: title,
+                    images: finalImgs,
+                    video: finalVid,
+                    specs: specs || 'High quality trendy fashion item.',
+                    link: link
+                };
+
+                products.unshift(newProd);
+                renderProducts();
+                goHome();
+
+                // تفريغ الحقول بالكامل بعد النشر
+                document.getElementById('admin-title').value = '';
+                document.getElementById('admin-link').value = '';
+                document.getElementById('admin-specs').value = '';
+                document.getElementById('img1-file').value = '';
+                document.getElementById('img2-file').value = '';
+                document.getElementById('img3-file').value = '';
+                document.getElementById('video-file').value = '';
+
+                alert('تم نشر المنتج بنجاح مع صوره المختلفة وفيديو الخاص به!');
             }
         }
 
@@ -314,46 +380,6 @@
             });
         }
 
-        function addNewProduct() {
-            const title = document.getElementById('admin-title').value;
-            const link = document.getElementById('admin-link').value;
-            const video = document.getElementById('admin-video').value;
-            const specs = document.getElementById('admin-specs').value;
-
-            if(!title || !link || uploadedImages.length === 0) {
-                alert('الرجاء إدخال العنوان، رابط الأفلييت، ورفع صورة واحدة على الأقل من جهازك!');
-                return;
-            }
-
-            // إكمال الصور الناقصة إن وجدت من الصورة الأولى
-            while(uploadedImages.length < 3) {
-                uploadedImages.push(uploadedImages[0]);
-            }
-
-            const newProd = {
-                title: title,
-                images: [...uploadedImages],
-                video: video || 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                specs: specs || 'High quality trendy fashion item.',
-                link: link
-            };
-
-            products.unshift(newProd);
-            renderProducts();
-            goHome();
-
-            // تفريغ الحقول والصور
-            document.getElementById('admin-title').value = '';
-            document.getElementById('admin-link').value = '';
-            document.getElementById('admin-video').value = '';
-            document.getElementById('admin-specs').value = '';
-            document.getElementById('file-input').value = '';
-            document.getElementById('preview-container').classList.add('hidden');
-            uploadedImages = [];
-
-            alert('تم نشر المنتج بنجاح في المتجر!');
-        }
-
         function openProduct(index) {
             const p = products[index];
             document.getElementById('gallery-view').classList.add('hidden');
@@ -364,7 +390,14 @@
             document.getElementById('detail-thumb-0').src = p.images[0];
             document.getElementById('detail-thumb-1').src = p.images[1];
             document.getElementById('detail-thumb-2').src = p.images[2];
-            document.getElementById('detail-video').src = p.video;
+            
+            const videoContainer = document.getElementById('video-container');
+            if(p.video.startsWith('data:video')) {
+                videoContainer.innerHTML = `<video src="${p.video}" controls class="w-full h-full object-cover"></video>`;
+            } else {
+                videoContainer.innerHTML = `<iframe src="${p.video}" class="w-full h-full" frameborder="0" allowfullscreen></iframe>`;
+            }
+
             document.getElementById('detail-specs').innerText = p.specs;
             document.getElementById('detail-buy-btn').href = p.link;
             
@@ -374,7 +407,6 @@
         function goHome() {
             document.getElementById('product-detail-view').classList.add('hidden');
             document.getElementById('gallery-view').classList.remove('hidden');
-            document.getElementById('detail-video').src = '';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
