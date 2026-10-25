@@ -77,15 +77,17 @@
                     <div>
                         <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم الفرعي)</label>
                         <select id="admin-dept" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
-                            <!-- الأقسام النسائية -->
+                            <!-- الأقسام النسائية المحدثة -->
                             <option value="handbags" id="opt-handbags">👜 قسم الشناتي النسائية (Handbags)</option>
+                            <option value="women_jackets" id="opt-women-jackets">🧥 قسم الجاكيت النسائي (Women's Jackets)</option>
+                            <option value="women_tshirts" id="opt-women-tshirts">👕 قسم التيشرتات والقمصان النسائي (Women's T-Shirts)</option>
                             <option value="shoes" id="opt-shoes">👠 قسم الأحذية النسائية (Women's Shoes)</option>
                             <option value="pants" id="opt-pants">👖 قسم البناطيل النسائية (Women's Pants)</option>
                             <option value="lingerie" id="opt-lingerie">✨ قسم اللانجري النسائي (Lingerie)</option>
                             
-                            <!-- الأقسام الرجالية المفصلة -->
+                            <!-- الأقسام الرجالية المحدثة -->
                             <option value="men_jackets" id="opt-men-jackets">🧥 قسم الجاكيتات الرجالية (Men's Jackets)</option>
-                            <option value="men_tshirts" id="opt-men-tshirts">👕 قسم التيشيرتات الرجالية (Men's T-Shirts)</option>
+                            <option value="men_tshirts" id="opt-men-tshirts">👕 قسم التيشيرتات والقمصان الرجالية (Men's T-Shirts & Shirts)</option>
                             <option value="men_pants" id="opt-men-pants">👖 قسم البناطيل الرجالية (Men's Pants)</option>
                             <option value="men_shoes" id="opt-men-shoes">👞 قسم الأحذية الرجالية (Men's Shoes)</option>
                             <option value="men_accessories" id="opt-men-accessories">🕶️ قسم الإكسسوارات الرجالية (Men's Accessories)</option>
@@ -161,6 +163,20 @@
 
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-women-jackets-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>🧥</span> Women's Jackets</h2>
+                </div>
+                <div id="grid-women_jackets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <h2 id="sec-women-tshirts-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👕</span> Women's T-Shirts & Shirts</h2>
+                </div>
+                <div id="grid-women_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                     <h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👠</span> Women's Shoes</h2>
                 </div>
                 <div id="grid-shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -190,7 +206,7 @@
 
             <section class="space-y-6">
                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👕</span> Men's T-Shirts</h2>
+                    <h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👕</span> Men's T-Shirts & Shirts</h2>
                 </div>
                 <div id="grid-men_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
@@ -345,6 +361,32 @@
                     link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
                 }
             ],
+            women_jackets: [
+                {
+                    title: "Women's Chic Winter Jacket",
+                    images: [
+                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Warm, stylish, and suitable for all winter occasions with premium lining.',
+                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                }
+            ],
+            women_tshirts: [
+                {
+                    title: "Women's Casual T-Shirt & Shirt",
+                    images: [
+                        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60',
+                        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60'
+                    ],
+                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    specs: 'Soft fabric, trendy cut designed for everyday elegance.',
+                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
+                }
+            ],
             shoes: [
                 {
                     title: 'Classic High Heels & Footwear',
@@ -399,14 +441,14 @@
             ],
             men_tshirts: [
                 {
-                    title: "Men's Casual Cotton T-Shirt",
+                    title: "Men's Casual T-Shirts & Shirts",
                     images: [
                         'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60',
                         'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60',
                         'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60'
                     ],
                     video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: '100% breathable cotton t-shirt designed for everyday modern comfort.',
+                    specs: '100% breathable cotton t-shirt and shirts designed for everyday modern comfort.',
                     link: 'https://fr.shein.com/p-568031556.html'
                 }
             ],
@@ -484,11 +526,13 @@
                 adminTitle: 'Detailed Department Creator (Admin Dashboard)',
                 lblDept: 'Select Department',
                 optHandbags: 'Handbags Collection',
+                optWomenJackets: "Women's Jackets",
+                optWomenTshirts: "Women's T-Shirts & Shirts",
                 optShoes: "Women's Shoes",
                 optPants: "Women's Pants",
                 optLingerie: "Women's Lingerie Collection",
                 optMenJackets: "Men's Jackets",
-                optMenTshirts: "Men's T-Shirts",
+                optMenTshirts: "Men's T-Shirts & Shirts",
                 optMenPants: "Men's Pants",
                 optMenShoes: "Men's Shoes",
                 optMenAccessories: "Men's Accessories",
@@ -506,11 +550,13 @@
                 storeTitle: 'paris-mode Store',
                 storeDesc: 'Explore all departments. Click any product to view details, photos, and video reviews.',
                 secHandbags: 'Handbags Collection',
+                secWomenJackets: "Women's Jackets",
+                secWomenTshirts: "Women's T-Shirts & Shirts",
                 secShoes: "Women's Shoes",
                 secPants: "Women's Pants",
                 secLingerie: "Women's Lingerie Collection",
                 secMenJackets: "Men's Jackets",
-                secMenTshirts: "Men's T-Shirts",
+                secMenTshirts: "Men's T-Shirts & Shirts",
                 secMenPants: "Men's Pants",
                 secMenShoes: "Men's Shoes",
                 secMenAccessories: "Men's Accessories",
@@ -537,11 +583,13 @@
                 adminTitle: 'لوحة التحكم الإدارية (إضافة منتج للأقسام الفرعية)',
                 lblDept: 'اختر القسم الفرعي',
                 optHandbags: 'قسم الشناتي النسائية',
+                optWomenJackets: 'قسم الجاكيت النسائي',
+                optWomenTshirts: 'قسم التيشرتات والقمصان النسائي',
                 optShoes: 'قسم الأحذية النسائية',
                 optPants: 'قسم البناطيل النسائية',
                 optLingerie: 'قسم اللانجري النسائي',
                 optMenJackets: 'قسم الجاكيتات الرجالية',
-                optMenTshirts: 'قسم التيشيرتات الرجالية',
+                optMenTshirts: 'قسم التيشيرتات والقمصان الرجالية',
                 optMenPants: 'قسم البناطيل الرجالية',
                 optMenShoes: 'قسم الأحذية الرجالية',
                 optMenAccessories: 'قسم الإكسسوارات الرجالية',
@@ -559,11 +607,13 @@
                 storeTitle: 'متجر paris-mode الشامل',
                 storeDesc: 'استعرض جميع الأقسام الفرعية. انقر على أي منتج لعرض التفاصيل، الصور الثلاث، وفيديوهات المراجعة.',
                 secHandbags: 'قسم الشناتي النسائية',
+                secWomenJackets: 'قسم الجاكيت النسائي',
+                secWomenTshirts: 'قسم التيشرتات والقمصان النسائي',
                 secShoes: 'قسم الأحذية النسائية',
                 secPants: 'قسم البناطيل النسائية',
                 secLingerie: 'قسم اللانجري النسائي',
                 secMenJackets: 'قسم الجاكيتات الرجالية',
-                secMenTshirts: 'قسم التيشيرتات الرجالية',
+                secMenTshirts: 'قسم التيشيرتات والقمصان الرجالية',
                 secMenPants: 'قسم البناطيل الرجالية',
                 secMenShoes: 'قسم الأحذية الرجالية',
                 secMenAccessories: 'قسم الإكسسوارات الرجالية',
@@ -590,11 +640,13 @@
                 adminTitle: 'Créateur de produits par sous-section',
                 lblDept: 'Sélectionner la sous-section',
                 optHandbags: 'Collection de sacs à main',
+                optWomenJackets: 'Vestes pour femmes',
+                optWomenTshirts: 'T-shirts et chemises pour femmes',
                 optShoes: 'Chaussures pour femmes',
                 optPants: 'Pantalons pour femmes',
                 optLingerie: 'Collection Lingerie',
                 optMenJackets: 'Vestes pour hommes',
-                optMenTshirts: 'T-shirts pour hommes',
+                optMenTshirts: 'T-shirts et chemises pour hommes',
                 optMenPants: 'Pantalons pour hommes',
                 optMenShoes: 'Chaussures pour hommes',
                 optMenAccessories: 'Accessoires pour hommes',
@@ -612,11 +664,13 @@
                 storeTitle: 'Boutique paris-mode',
                 storeDesc: 'Explorez tous les départements. Cliquez sur un produit pour voir les détails.',
                 secHandbags: 'Collection de sacs à main',
+                secWomenJackets: 'Vestes pour femmes',
+                secWomenTshirts: 'T-shirts et chemises pour femmes',
                 secShoes: 'Chaussures pour femmes',
                 secPants: 'Pantalons pour femmes',
                 secLingerie: 'Collection Lingerie',
                 secMenJackets: 'Vestes pour hommes',
-                secMenTshirts: 'T-shirts pour hommes',
+                secMenTshirts: 'T-shirts et chemises pour hommes',
                 secMenPants: 'Pantalons pour hommes',
                 secMenShoes: 'Chaussures pour hommes',
                 secMenAccessories: 'Accessoires pour hommes',
@@ -643,11 +697,13 @@
                 adminTitle: 'Produkt-Creator für Unterabteilungen',
                 lblDept: 'Unterabteilung auswählen',
                 optHandbags: 'Handtaschen-Kollektion',
+                optWomenJackets: 'Damen-Jacken',
+                optWomenTshirts: 'Damen T-Shirts & Hemden',
                 optShoes: 'Damen-Schuhe',
                 optPants: 'Damen-Hosen',
                 optLingerie: 'Damen-Lingerie-Kollektion',
                 optMenJackets: 'Herren-Jacken',
-                optMenTshirts: 'Herren-T-Shirts',
+                optMenTshirts: 'Herren T-Shirts & Hemden',
                 optMenPants: 'Herren-Hosen',
                 optMenShoes: 'Herren-Schuhe',
                 optMenAccessories: 'Herren-Accessoires',
@@ -665,11 +721,13 @@
                 storeTitle: 'paris-mode Store',
                 storeDesc: 'Entdecken Sie alle Abteilungen. Klicken Sie auf ein Produkt für Details.',
                 secHandbags: 'Handtaschen-Kollektion',
+                secWomenJackets: 'Damen-Jacken',
+                secWomenTshirts: 'Damen T-Shirts & Hemden',
                 secShoes: 'Damen-Schuhe',
                 secPants: 'Damen-Hosen',
                 secLingerie: 'Damen-Lingerie-Kollektion',
                 secMenJackets: 'Herren-Jacken',
-                secMenTshirts: 'Herren-T-Shirts',
+                secMenTshirts: 'Herren T-Shirts & Hemden',
                 secMenPants: 'Herren-Hosen',
                 secMenShoes: 'Herren-Schuhe',
                 secMenAccessories: 'Herren-Accessoires',
@@ -696,11 +754,13 @@
                 adminTitle: 'Product Creator voor Subsecties',
                 lblDept: 'Selecteer Subafdeling',
                 optHandbags: 'Handtassen Collectie',
+                optWomenJackets: 'Dames Jassen',
+                optWomenTshirts: 'Dames T-Shirts & Shirts',
                 optShoes: 'Dames Schoenen',
                 optPants: 'Dames Broeken',
                 optLingerie: 'Dames Lingerie Collectie',
                 optMenJackets: 'Heren Jassen',
-                optMenTshirts: 'Heren T-Shirts',
+                optMenTshirts: 'Heren T-Shirts & Shirts',
                 optMenPants: 'Heren Broeken',
                 optMenShoes: 'Heren Schoenen',
                 optMenAccessories: 'Heren Accessoires',
@@ -718,11 +778,13 @@
                 storeTitle: 'paris-mode Winkel',
                 storeDesc: 'Verken alle afdelingen. Klik op een product voor details, foto’s en video’s.',
                 secHandbags: 'Handtassen Collectie',
+                secWomenJackets: 'Dames Jassen',
+                secWomenTshirts: 'Dames T-Shirts & Shirts',
                 secShoes: 'Dames Schoenen',
                 secPants: 'Dames Broeken',
                 secLingerie: 'Dames Lingerie Collectie',
                 secMenJackets: 'Heren Jassen',
-                secMenTshirts: 'Heren T-Shirts',
+                secMenTshirts: 'Heren T-Shirts & Shirts',
                 secMenPants: 'Heren Broeken',
                 secMenShoes: 'Heren Schoenen',
                 secMenAccessories: 'Heren Accessoires',
@@ -755,6 +817,8 @@
             document.getElementById('admin-panel-title').innerHTML = `<span>📦</span> ${t.adminTitle}`;
             document.getElementById('lbl-dept').innerText = t.lblDept;
             document.getElementById('opt-handbags').innerText = t.optHandbags;
+            document.getElementById('opt-women-jackets').innerText = t.optWomenJackets;
+            document.getElementById('opt-women-tshirts').innerText = t.optWomenTshirts;
             document.getElementById('opt-shoes').innerText = t.optShoes;
             document.getElementById('opt-pants').innerText = t.optPants;
             document.getElementById('opt-lingerie').innerText = t.optLingerie;
@@ -779,6 +843,8 @@
             document.getElementById('store-main-title').innerText = t.storeTitle;
             document.getElementById('store-main-desc').innerText = t.storeDesc;
             document.getElementById('sec-handbags-title').innerHTML = `<span>👜</span> ${t.secHandbags}`;
+            document.getElementById('sec-women-jackets-title').innerHTML = `<span>🧥</span> ${t.secWomenJackets}`;
+            document.getElementById('sec-women-tshirts-title').innerHTML = `<span>👕</span> ${t.secWomenTshirts}`;
             document.getElementById('sec-shoes-title').innerHTML = `<span>👠</span> ${t.secShoes}`;
             document.getElementById('sec-pants-title').innerHTML = `<span>👖</span> ${t.secPants}`;
             document.getElementById('sec-lingerie-title').innerHTML = `<span>✨</span> ${t.secLingerie}`;
@@ -895,6 +961,8 @@
             const t = translations[currentLang];
 
             renderGrid('handbags', 'grid-handbags', t.viewText, t.btnDetails);
+            renderGrid('women_jackets', 'grid-women_jackets', t.viewText, t.btnDetails);
+            renderGrid('women_tshirts', 'grid-women_tshirts', t.viewText, t.btnDetails);
             renderGrid('shoes', 'grid-shoes', t.viewText, t.btnDetails);
             renderGrid('pants', 'grid-pants', t.viewText, t.btnDetails);
             renderGrid('lingerie', 'grid-lingerie', t.viewText, t.btnDetails);
