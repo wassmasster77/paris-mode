@@ -22,7 +22,6 @@
         .whatsapp-float {
             animation: pulse-whatsapp 2s infinite;
         }
-        /* حركة الشريط الترحيبي المتحرك */
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
@@ -103,9 +102,8 @@
         </div>
     </section>
 
-    <!-- الأقسام والمنتجات بدون أسعار -->
+    <!-- الأقسام والمنتجات -->
     <main class="max-w-7xl mx-auto px-4 py-6 space-y-16">
-
         <!-- القسم النسائي والشناتي -->
         <section>
             <div class="border-b border-slate-800 pb-3 mb-8 flex items-center justify-between">
@@ -114,7 +112,6 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- منتج 1 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -130,7 +127,6 @@
                     </div>
                 </div>
 
-                <!-- منتج 2 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -146,7 +142,6 @@
                     </div>
                 </div>
 
-                <!-- منتج 3 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -172,7 +167,6 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- منتج 4 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -188,7 +182,6 @@
                     </div>
                 </div>
 
-                <!-- منتج 5 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -214,7 +207,6 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- منتج 6 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -230,7 +222,6 @@
                     </div>
                 </div>
 
-                <!-- منتج 7 -->
                 <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group flex flex-col justify-between">
                     <div>
                         <div class="h-52 overflow-hidden bg-slate-800 relative">
@@ -247,7 +238,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- زر الواتساب العائم -->
@@ -259,20 +249,35 @@
         </svg>
     </a>
 
-    <!-- تذييل الصفحة مع روابط السوشيال ميديا والمدونات -->
-    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-10 text-center mt-16 space-y-4">
-        <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
-            <a href="https://paris-mode-tendance.blogspot.com" target="_blank" class="hover:text-indigo-400 transition">Paris Mode Blog</a>
-            <a href="https://wasimtech2026.blogspot.com" target="_blank" class="hover:text-indigo-400 transition">Wasim Tech</a>
-            <a href="https://www.facebook.com/wassmasster.77?locale=fr_FR" target="_blank" class="hover:text-indigo-400 transition">Facebook</a>
-            <a href="https://www.instagram.com/modechicparis.fr/?hl=ar" target="_blank" class="hover:text-indigo-400 transition">Instagram</a>
-            <a href="https://www.tiktok.com/@modechicparis.fr" target="_blank" class="hover:text-indigo-400 transition">TikTok</a>
+    <!-- تذييل الصفحة مع روابط السوشيال ميديا والمدونات (أيقونات واضحة) -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-10 text-center mt-16 space-y-6">
+        <div class="max-w-4xl mx-auto px-4">
+            <h4 class="text-white font-bold mb-4 tracking-wide uppercase text-xs text-indigo-400">Follow Our Networks & Blogs</h4>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                <a href="https://paris-mode-tendance.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2">
+                    <span>📰</span> Paris Mode Blog
+                </a>
+                <a href="https://wasimtech2026.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2">
+                    <span>💻</span> Wasim Tech
+                </a>
+                <a href="https://www.facebook.com/wassmasster.77?locale=fr_FR" target="_blank" class="bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2">
+                    <span>👥</span> Facebook
+                </a>
+                <a href="https://www.instagram.com/modechicparis.fr/?hl=ar" target="_blank" class="bg-slate-800 hover:bg-pink-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2">
+                    <span>📸</span> Instagram
+                </a>
+                <a href="https://www.tiktok.com/@modechicparis.fr" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2">
+                    <span>🎬</span> TikTok
+                </a>
+            </div>
         </div>
-        <p id="footer-text">&copy; 2026 paris-mode. All rights reserved. Affiliate partner links included.</p>
-        <p class="text-xs text-slate-500">Contact: wassmasster77@gmail.com | Phone: 0033764026479</p>
+        <div class="border-t border-slate-800/80 pt-6 space-y-2">
+            <p id="footer-text">&copy; 2026 paris-mode. All rights reserved. Affiliate partner links included.</p>
+            <p class="text-xs text-slate-500">Contact: wassmasster77@gmail.com | Phone: 0033764026479</p>
+        </div>
     </footer>
 
-    <!-- سكربت اللغات والترجمة الكاملة والشريط المتحرك -->
+    <!-- سكربت اللغات والترجمة الكاملة -->
     <script>
         function handleTilt(e, card) {
             const rect = card.getBoundingClientRect();
@@ -404,7 +409,7 @@
             document.querySelectorAll('.buy-btn').forEach(el => el.innerText = t.buy);
             document.getElementById('footer-text').innerText = t.footer;
 
-            document.querySelectorAll('.lang-btn').btnAcross = document.querySelectorAll('.lang-btn').forEach(btn => {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
                 if(btn.getAttribute('data-lang') === lang) {
                     btn.className = 'px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition lang-btn';
                 } else {
