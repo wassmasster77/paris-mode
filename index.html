@@ -77,22 +77,22 @@
                     <div>
                         <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم الفرعي)</label>
                         <select id="admin-dept" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500">
-                            <!-- الأقسام النسائية المحدثة -->
+                            <!-- الأقسام النسائية -->
                             <option value="handbags" id="opt-handbags">👜 قسم الشناتي النسائية (Handbags)</option>
                             <option value="women_jackets" id="opt-women-jackets">🧥 قسم الجاكيت النسائي (Women's Jackets)</option>
-                            <option value="women_tshirts" id="opt-women-tshirts">👕 قسم التيشرتات والقمصان النسائي (Women's T-Shirts)</option>
+                            <option value="women_tshirts" id="opt-women-tshirts">👕 قسم التيشيرتات والقمصان النسائي (Women's T-Shirts)</option>
                             <option value="shoes" id="opt-shoes">👠 قسم الأحذية النسائية (Women's Shoes)</option>
                             <option value="pants" id="opt-pants">👖 قسم البناطيل النسائية (Women's Pants)</option>
                             <option value="lingerie" id="opt-lingerie">✨ قسم اللانجري النسائي (Lingerie)</option>
                             
-                            <!-- الأقسام الرجالية المحدثة -->
+                            <!-- الأقسام الرجالية -->
                             <option value="men_jackets" id="opt-men-jackets">🧥 قسم الجاكيتات الرجالية (Men's Jackets)</option>
-                            <option value="men_tshirts" id="opt-men-tshirts">👕 قسم التيشيرتات والقمصان الرجالية (Men's T-Shirts & Shirts)</option>
+                            <option value="men_tshirts" id="opt-men-tshirts">👕 قسم التيشيرتات والقمصان الرجالية (Men's T-Shirts)</option>
                             <option value="men_pants" id="opt-men-pants">👖 قسم البناطيل الرجالية (Men's Pants)</option>
                             <option value="men_shoes" id="opt-men-shoes">👞 قسم الأحذية الرجالية (Men's Shoes)</option>
                             <option value="men_accessories" id="opt-men-accessories">🕶️ قسم الإكسسوارات الرجالية (Men's Accessories)</option>
 
-                            <!-- أقسام الإلكترونيات والأجهزة -->
+                            <!-- الأجهزة والإلكترونيات -->
                             <option value="appliances" id="opt-appliances">🏠 الأجهزة المنزلية (Home Appliances)</option>
                             <option value="mobiles" id="opt-mobiles">📱 الموبايلات واللابتوبات (Mobiles & Laptops)</option>
                         </select>
@@ -146,126 +146,93 @@
             </div>
         </div>
 
-        <!-- عرض 1: المعرض الرئيسي لجميع الأقسام الفرعية المفصلة -->
+        <!-- المعرض الرئيسي لجميع الأقسام الفرعية -->
         <div id="gallery-view" class="space-y-16">
             <div class="text-center mb-6 space-y-3">
                 <h1 id="store-main-title" class="text-4xl font-black text-white">paris-mode Store</h1>
                 <p id="store-main-desc" class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view details, photos, and video reviews.</p>
             </div>
 
-            <!-- الأقسام النسائية -->
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-handbags-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👜</span> Handbags Collection</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-handbags-title" class="text-2xl font-bold text-indigo-400"><span>👜</span> Handbags Collection</h2></div>
                 <div id="grid-handbags" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-women-jackets-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>🧥</span> Women's Jackets</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-women-jackets-title" class="text-2xl font-bold text-indigo-400"><span>🧥</span> Women's Jackets</h2></div>
                 <div id="grid-women_jackets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-women-tshirts-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👕</span> Women's T-Shirts & Shirts</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-women-tshirts-title" class="text-2xl font-bold text-indigo-400"><span>👕</span> Women's T-Shirts & Shirts</h2></div>
                 <div id="grid-women_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👠</span> Women's Shoes</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400"><span>👠</span> Women's Shoes</h2></div>
                 <div id="grid-shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-pants-title" class="text-2xl font-bold text-indigo-400 flex items-center gap-2"><span>👖</span> Women's Pants</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-pants-title" class="text-2xl font-bold text-indigo-400"><span>👖</span> Women's Pants</h2></div>
                 <div id="grid-pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400 flex items-center gap-2"><span>✨</span> Women's Lingerie Collection</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400"><span>✨</span> Women's Lingerie Collection</h2></div>
                 <div id="grid-lingerie" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- الأقسام الرجالية المفصلة -->
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-jackets-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>🧥</span> Men's Jackets</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-jackets-title" class="text-2xl font-bold text-sky-400"><span>🧥</span> Men's Jackets</h2></div>
                 <div id="grid-men_jackets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👕</span> Men's T-Shirts & Shirts</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400"><span>👕</span> Men's T-Shirts & Shirts</h2></div>
                 <div id="grid-men_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-pants-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👖</span> Men's Pants</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-pants-title" class="text-2xl font-bold text-sky-400"><span>👖</span> Men's Pants</h2></div>
                 <div id="grid-men_pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-shoes-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>👞</span> Men's Shoes</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-shoes-title" class="text-2xl font-bold text-sky-400"><span>👞</span> Men's Shoes</h2></div>
                 <div id="grid-men_shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-men-accessories-title" class="text-2xl font-bold text-sky-400 flex items-center gap-2"><span>🕶️</span> Men's Accessories</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-accessories-title" class="text-2xl font-bold text-sky-400"><span>🕶️</span> Men's Accessories</h2></div>
                 <div id="grid-men_accessories" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
-            <!-- أقسام الإلكترونيات والأجهزة -->
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-appliances-title" class="text-2xl font-bold text-teal-400 flex items-center gap-2"><span>🏠</span> Home Appliances</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-appliances-title" class="text-2xl font-bold text-teal-400"><span>🏠</span> Home Appliances</h2></div>
                 <div id="grid-appliances" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
 
             <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <h2 id="sec-mobiles-title" class="text-2xl font-bold text-cyan-400 flex items-center gap-2"><span>📱</span> Mobiles & Laptops</h2>
-                </div>
+                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-mobiles-title" class="text-2xl font-bold text-cyan-400"><span>📱</span> Mobiles & Laptops</h2></div>
                 <div id="grid-mobiles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </section>
         </div>
 
-        <!-- عرض 2: صفحة تفاصيل المنتج الفردي -->
+        <!-- صفحة تفاصيل المنتج -->
         <div id="product-detail-view" class="hidden space-y-8">
-            <button id="btn-back" onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">
-                ← Back to Store (العودة للمتجر)
-            </button>
+            <button id="btn-back" onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">← Back to Store</button>
 
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="space-y-4">
-                    <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
-                        <img id="detail-main-img" src="" alt="Product" class="w-full h-full object-cover">
-                    </div>
+                    <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700"><img id="detail-main-img" src="" alt="Product" class="w-full h-full object-cover"></div>
                     <div class="grid grid-cols-3 gap-3">
-                        <img id="detail-thumb-0" src="" onclick="setMainImage(this.src)" alt="Thumb 1" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
-                        <img id="detail-thumb-1" src="" onclick="setMainImage(this.src)" alt="Thumb 2" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
-                        <img id="detail-thumb-2" src="" onclick="setMainImage(this.src)" alt="Thumb 3" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
+                        <img id="detail-thumb-0" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
+                        <img id="detail-thumb-1" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
+                        <img id="detail-thumb-2" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
                     </div>
                     <div class="mt-6">
-                        <h4 id="lbl-vid-review" class="text-xs font-bold text-indigo-400 mb-2 uppercase tracking-wide">Product Video Review:</h4>
+                        <h4 id="lbl-vid-review" class="text-xs font-bold text-indigo-400 mb-2 uppercase">Product Video Review:</h4>
                         <div id="video-container" class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center"></div>
                     </div>
                 </div>
@@ -273,26 +240,20 @@
                 <div class="space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
                         <h1 id="detail-title" class="text-3xl sm:text-4xl font-black text-white"></h1>
-                        
                         <div class="flex items-center gap-3">
-                            <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-4 py-2 rounded-xl text-sm font-bold transition border border-slate-700 flex items-center gap-2">
+                            <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-4 py-2 rounded-xl text-sm font-bold border border-slate-700 flex items-center gap-2">
                                 <span>❤️</span> <span id="like-text">Like</span> <span id="like-count" class="bg-slate-900 px-2 py-0.5 rounded-lg text-xs">24</span>
                             </button>
                         </div>
-
                         <div class="space-y-2 pt-2">
-                            <h4 id="lbl-specs-title" class="text-xs font-bold text-indigo-400 uppercase tracking-wide">Specifications:</h4>
+                            <h4 id="lbl-specs-title" class="text-xs font-bold text-indigo-400 uppercase">Specifications:</h4>
                             <p id="detail-specs" class="text-slate-300 text-sm leading-relaxed bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60"></p>
                         </div>
                     </div>
 
                     <div class="space-y-3 pt-6 border-t border-slate-800">
-                        <button id="btn-add-cart" onclick="alert('Product added to cart!')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-3.5 rounded-xl transition border border-slate-700 flex items-center justify-center gap-2">
-                            <span>🛒</span> Add to Cart
-                        </button>
-                        <a id="detail-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl transition shadow-xl text-lg">
-                            Shop Now
-                        </a>
+                        <button id="btn-add-cart" onclick="alert('Product added to cart!')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-3.5 rounded-xl border border-slate-700 flex items-center justify-center gap-2"><span>🛒</span> Add to Cart</button>
+                        <a id="detail-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-xl text-lg">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -300,223 +261,52 @@
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
                 <h3 id="lbl-reviews-title" class="text-xl font-bold text-white flex items-center gap-2"><span>💬</span> Customer Reviews & Comments</h3>
                 <div class="space-y-3">
-                    <input type="text" id="comment-name" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    <textarea id="comment-text" rows="3" placeholder="Write your review here..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500"></textarea>
-                    <button id="btn-post-comment" onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">Post Review</button>
+                    <input type="text" id="comment-name" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white">
+                    <textarea id="comment-text" rows="3" placeholder="Write your review here..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white"></textarea>
+                    <button id="btn-post-comment" onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm">Post Review</button>
                 </div>
-                <div id="comments-list" class="space-y-4 pt-4 border-t border-slate-800">
-                    <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/60 space-y-1">
-                        <div class="flex items-center justify-between">
-                            <h5 class="font-bold text-white text-sm">Sophie Martin</h5>
-                            <span class="text-xs text-slate-500">2 days ago</span>
-                        </div>
-                        <p class="text-slate-300 text-xs">Amazing quality! Exactly as shown in the video and pictures.</p>
-                    </div>
-                </div>
+                <div id="comments-list" class="space-y-4 pt-4 border-t border-slate-800"></div>
             </div>
         </div>
 
     </main>
 
-    <!-- زر الواتساب العائم -->
-    <a href="https://wa.me/0033764026479?text=Hello%20paris-mode,%20I%20have%20an%20inquiry" target="_blank" 
-       class="whatsapp-float fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition duration-300" 
-       title="Contact us on WhatsApp">
-        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/0033764026479?text=Hello%20paris-mode" target="_blank" class="whatsapp-float fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></path></svg>
     </a>
 
-    <!-- تذييل الصفحة -->
+    <!-- التذييل -->
     <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-10 text-center mt-16 space-y-6">
         <div class="max-w-4xl mx-auto px-4">
             <h4 id="footer-networks" class="text-white font-bold mb-4 tracking-wide uppercase text-xs text-indigo-400">Follow Our Networks & Blogs</h4>
             <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
-                <a href="https://paris-mode-tendance.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>📰</span> Paris Mode Blog</a>
-                <a href="https://wasimtech2026.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>💻</span> Wasim Tech</a>
-                <a href="https://www.facebook.com/wassmasster.77?locale=fr_FR" target="_blank" class="bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>👥</span> Facebook</a>
-                <a href="https://www.instagram.com/modechicparis.fr/?hl=ar" target="_blank" class="bg-slate-800 hover:bg-pink-600 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>📸</span> Instagram</a>
-                <a href="https://www.tiktok.com/@modechicparis.fr" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white px-4 py-2 rounded-xl transition border border-slate-700 shadow flex items-center gap-2"><span>🎬</span> TikTok</a>
+                <a href="https://paris-mode-tendance.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 px-4 py-2 rounded-xl transition">Paris Mode Blog</a>
+                <a href="https://wasimtech2026.blogspot.com" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-slate-200 px-4 py-2 rounded-xl transition">Wasim Tech</a>
             </div>
         </div>
         <div class="border-t border-slate-800/80 pt-6 space-y-2">
-            <p id="footer-rights">&copy; 2026 paris-mode. All rights reserved. Affiliate partner links included.</p>
+            <p id="footer-rights">&copy; 2026 paris-mode. All rights reserved.</p>
             <p class="text-xs text-slate-500">Contact: wassmasster77@gmail.com | Phone: 0033764026479</p>
         </div>
     </footer>
 
-    <!-- سكربت إدارة الأقسام الفرعية المفصلة والترجمة -->
+    <!-- سكربت التشغيل -->
     <script>
         const storeData = {
-            handbags: [
-                {
-                    title: 'Luxury Parisian Leather Handbag',
-                    images: [
-                        'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Crafted from premium genuine leather, featuring gold-tone hardware and spacious dual compartments.',
-                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-                }
-            ],
-            women_jackets: [
-                {
-                    title: "Women's Chic Winter Jacket",
-                    images: [
-                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Warm, stylish, and suitable for all winter occasions with premium lining.',
-                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-                }
-            ],
-            women_tshirts: [
-                {
-                    title: "Women's Casual T-Shirt & Shirt",
-                    images: [
-                        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Soft fabric, trendy cut designed for everyday elegance.',
-                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-                }
-            ],
-            shoes: [
-                {
-                    title: 'Classic High Heels & Footwear',
-                    images: [
-                        'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Walk with confidence and unparalleled elegance. Premium comfort sole.',
-                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-                }
-            ],
-            pants: [
-                {
-                    title: 'Elegant Women\'s Casual Pants',
-                    images: [
-                        'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Comfortable fabric, modern high-waist cut suitable for all casual and formal occasions.',
-                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-                }
-            ],
-            lingerie: [
-                {
-                    title: 'Satin Elegant Lingerie Set',
-                    images: [
-                        'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Luxurious satin fabric designed for ultimate comfort and elegance.',
-                    link: 'https://onelink.shein.com/58/6673ux368rpy?ismg_ol=DGaScHemoCf_01_KOC-C'
-                }
-            ],
-            men_jackets: [
-                {
-                    title: "Men's Classic Winter Jacket",
-                    images: [
-                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://fr.shein.com/p-568031556.html',
-                    specs: 'Sophisticated and practical men jacket for daily outings and winter seasons.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ],
-            men_tshirts: [
-                {
-                    title: "Men's Casual T-Shirts & Shirts",
-                    images: [
-                        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: '100% breathable cotton t-shirt and shirts designed for everyday modern comfort.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ],
-            men_pants: [
-                {
-                    title: "Men's Classic Casual Pants",
-                    images: [
-                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Stylish and durable trousers tailored for formal and informal looks.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ],
-            men_shoes: [
-                {
-                    title: "Men's Luxury Leather Shoes",
-                    images: [
-                        'https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'High-end craftsmanship offering ultimate comfort and sophisticated style.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ],
-            men_accessories: [
-                {
-                    title: "Men's Luxury Watch & Accessories",
-                    images: [
-                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'Precision watch and matching accessories for the modern gentleman.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ],
-            appliances: [
-                {
-                    title: 'Smart Home Kitchen Appliance',
-                    images: [
-                        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'High efficiency home appliance designed to make daily kitchen tasks easier and faster.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ],
-            mobiles: [
-                {
-                    title: 'Pro Ultra Smartphone & Laptop',
-                    images: [
-                        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60',
-                        'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&auto=format&fit=crop&q=60'
-                    ],
-                    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    specs: 'High performance processor, stunning camera, and crystal clear display.',
-                    link: 'https://fr.shein.com/p-568031556.html'
-                }
-            ]
+            handbags: [{title: 'Luxury Leather Handbag', images: ['https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Premium genuine leather.', link: 'https://onelink.shein.com'}],
+            women_jackets: [{title: "Women's Winter Jacket", images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Warm and stylish.', link: 'https://onelink.shein.com'}],
+            women_tshirts: [{title: "Women's T-Shirts & Shirts", images: ['https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Soft cotton fabric.', link: 'https://onelink.shein.com'}],
+            shoes: [{title: 'Classic High Heels', images: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Comfortable sole.', link: 'https://onelink.shein.com'}],
+            pants: [{title: "Women's Casual Pants", images: ['https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Modern high-waist cut.', link: 'https://onelink.shein.com'}],
+            lingerie: [{title: 'Satin Lingerie Set', images: ['https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Luxurious satin fabric.', link: 'https://onelink.shein.com'}],
+            men_jackets: [{title: "Men's Winter Jacket", images: ['https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Practical for winter.', link: 'https://onelink.shein.com'}],
+            men_tshirts: [{title: "Men's T-Shirts & Shirts", images: ['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: '100% breathable cotton.', link: 'https://onelink.shein.com'}],
+            men_pants: [{title: "Men's Casual Pants", images: ['https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Durable trousers.', link: 'https://onelink.shein.com'}],
+            men_shoes: [{title: "Men's Leather Shoes", images: ['https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Sophisticated style.', link: 'https://onelink.shein.com'}],
+            men_accessories: [{title: "Men's Watch & Accessories", images: ['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Precision watch.', link: 'https://onelink.shein.com'}],
+            appliances: [{title: 'Home Kitchen Appliance', images: ['https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'High efficiency appliance.', link: 'https://onelink.shein.com'}],
+            mobiles: [{title: 'Smartphone & Laptop', images: ['https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'High performance.', link: 'https://onelink.shein.com'}]
         };
 
         const translations = {
@@ -575,7 +365,7 @@
                 commentPlaceholder: 'Write your review here...',
                 postReview: 'Post Review',
                 footerNetworks: 'Follow Our Networks & Blogs',
-                footerRights: '© 2026 paris-mode. All rights reserved. Affiliate partner links included.'
+                footerRights: '© 2026 paris-mode. All rights reserved.'
             },
             ar: {
                 dir: 'rtl',
@@ -584,7 +374,7 @@
                 lblDept: 'اختر القسم الفرعي',
                 optHandbags: 'قسم الشناتي النسائية',
                 optWomenJackets: 'قسم الجاكيت النسائي',
-                optWomenTshirts: 'قسم التيشرتات والقمصان النسائي',
+                optWomenTshirts: 'قسم التيشيرتات والقمصان النسائي',
                 optShoes: 'قسم الأحذية النسائية',
                 optPants: 'قسم البناطيل النسائية',
                 optLingerie: 'قسم اللانجري النسائي',
@@ -608,7 +398,7 @@
                 storeDesc: 'استعرض جميع الأقسام الفرعية. انقر على أي منتج لعرض التفاصيل، الصور الثلاث، وفيديوهات المراجعة.',
                 secHandbags: 'قسم الشناتي النسائية',
                 secWomenJackets: 'قسم الجاكيت النسائي',
-                secWomenTshirts: 'قسم التيشرتات والقمصان النسائي',
+                secWomenTshirts: 'قسم التيشيرتات والقمصان النسائي',
                 secShoes: 'قسم الأحذية النسائية',
                 secPants: 'قسم البناطيل النسائية',
                 secLingerie: 'قسم اللانجري النسائي',
@@ -632,7 +422,7 @@
                 commentPlaceholder: 'اكتب رأيك أو تقييمك للمنتج...',
                 postReview: 'إرسال التعليق',
                 footerNetworks: 'تابع شبكاتنا ومدوناتنا',
-                footerRights: '© 2026 paris-mode. جميع الحقوق محفوظة. يتضمن روابط تسويق بالعمولة.'
+                footerRights: '© 2026 paris-mode. جميع الحقوق محفوظة.'
             },
             fr: {
                 dir: 'ltr',
@@ -689,7 +479,7 @@
                 commentPlaceholder: 'Écrivez votre avis ici...',
                 postReview: 'Publier l’avis',
                 footerNetworks: 'Suivez nos réseaux et blogs',
-                footerRights: '© 2026 paris-mode. Tous droits réservés. Liens d’affiliation inclus.'
+                footerRights: '© 2026 paris-mode. Tous droits réservés.'
             },
             de: {
                 dir: 'ltr',
@@ -746,7 +536,7 @@
                 commentPlaceholder: 'Schreiben Sie Ihre Bewertung...',
                 postReview: 'Bewertung absenden',
                 footerNetworks: 'Folgen Sie unseren Netzwerken & Blogs',
-                footerRights: '© 2026 paris-mode. Alle Rechte vorbehalten. Affiliate-Links enthalten.'
+                footerRights: '© 2026 paris-mode. Alle Rechte vorbehalten.'
             },
             nl: {
                 dir: 'ltr',
@@ -803,7 +593,7 @@
                 commentPlaceholder: 'Schrijf hier uw beoordeling...',
                 postReview: 'Beoordeling plaatsen',
                 footerNetworks: 'Volg onze netwerken & blogs',
-                footerRights: '© 2026 paris-mode. Alle rechten voorbehouden. Inclusief affiliate links.'
+                footerRights: '© 2026 paris-mode. Alle rechten voorbehouden.'
             }
         };
 
