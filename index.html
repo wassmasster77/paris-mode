@@ -9,10 +9,11 @@
         .card-3d-tilt {
             transform-style: preserve-3d;
             perspective: 1000px;
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            transition: transform 0.2s ease-out, box-shadow 0.4s ease;
         }
         .card-3d-tilt:hover {
-            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 35px 70px -15px rgba(99, 102, 241, 0.6);
+            transform: translateY(-5px);
         }
         @keyframes pulse-whatsapp {
             0% { transform: scale(1); }
@@ -56,10 +57,8 @@
             <div class="text-2xl font-black text-indigo-500 tracking-wider cursor-pointer" onclick="goHome()">paris-mode.</div>
             
             <div class="flex items-center gap-3">
-                <!-- زر إظهار/إخفاء لوحة التحكم الخاصة بك -->
                 <button onclick="toggleAdminPanel()" class="bg-slate-800 hover:bg-slate-700 text-indigo-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-700 transition">Admin Panel</button>
                 
-                <!-- أزرار تبديل اللغات -->
                 <div class="flex items-center gap-1.5 bg-slate-800 p-1 rounded-xl border border-slate-700 text-xs">
                     <button onclick="setLanguage('en')" class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition lang-btn" data-lang="en">EN</button>
                     <button onclick="setLanguage('ar')" class="px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition lang-btn" data-lang="ar">AR</button>
@@ -74,7 +73,7 @@
     <!-- البانر البصري الضخم جداً 3D يملأ الموقع (Hero Section) -->
     <section class="w-full px-2 sm:px-4 pt-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
-            <div class="card-3d-tilt relative h-[520px] rounded-3xl overflow-hidden shadow-2xl group border border-slate-800">
+            <div class="card-3d-tilt relative h-[560px] rounded-3xl overflow-hidden shadow-2xl group border border-slate-800">
                 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1400&auto=format&fit=crop&q=90" alt="Party Season" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-10">
                     <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-2">New Collection</span>
@@ -82,7 +81,7 @@
                     <a href="#gallery-view" class="inline-block bg-white text-black font-extrabold px-8 py-3 rounded-full text-xs tracking-wider uppercase w-max hover:bg-indigo-600 hover:text-white transition shadow-xl">SHOP NOW</a>
                 </div>
             </div>
-            <div class="card-3d-tilt relative h-[520px] rounded-3xl overflow-hidden shadow-2xl group border border-slate-800">
+            <div class="card-3d-tilt relative h-[560px] rounded-3xl overflow-hidden shadow-2xl group border border-slate-800">
                 <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1400&auto=format&fit=crop&q=90" alt="Tailoring Collection" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-10">
                     <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-2">Trending Outfits</span>
@@ -94,9 +93,9 @@
     </section>
 
     <!-- المحتوى الرئيسي -->
-    <main class="max-w-7xl mx-auto px-4 py-10 space-y-12">
+    <main class="max-w-[1400px] mx-auto px-4 py-10 space-y-16">
 
-        <!-- لوحة التحكم الإدارية (مخفية افتراضياً ولا تظهر للزوار) -->
+        <!-- لوحة التحكم الإدارية (مخفية افتراضياً) -->
         <div id="admin-panel-box" class="hidden bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
             <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
                 <h3 id="admin-panel-title" class="text-xl font-bold text-white flex items-center gap-2">Detailed Department Creator (لوحة إدارة الأقسام الفرعية)</h3>
@@ -104,7 +103,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
                 <div class="lg:col-span-6 space-y-4">
                     <div>
                         <label id="lbl-dept" class="block text-xs font-bold text-slate-400 mb-1">Select Department (اختر القسم الفرعي)</label>
@@ -143,7 +141,6 @@
 
                 <div class="lg:col-span-6 space-y-4 bg-slate-800/40 p-5 rounded-3xl border border-slate-800">
                     <h4 id="lbl-media" class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-3">Media Upload (رفع الوسائط):</h4>
-                    
                     <div class="space-y-3">
                         <div class="flex items-center justify-between bg-slate-800 p-3 rounded-2xl border border-slate-700">
                             <span id="lbl-img1" class="text-xs font-bold text-white">Main Image 1</span>
@@ -163,7 +160,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="mt-8 pt-6 border-t border-slate-800">
@@ -173,114 +169,114 @@
             </div>
         </div>
 
-        <!-- المعرض الرئيسي لجميع الأقسام (بدون أيقونات كرتونية) -->
-        <div id="gallery-view" class="space-y-16">
-            <div class="text-center mb-6 space-y-3">
-                <h1 id="store-main-title" class="text-4xl font-black text-white">paris-mode Store</h1>
-                <p id="store-main-desc" class="text-slate-400 text-sm max-w-lg mx-auto">Explore all departments. Click any product to view details, photos, and video reviews.</p>
+        <!-- المعرض الرئيسي (صور عملاقة تملأ الموقع 3D بدون أي نص إضافي) -->
+        <div id="gallery-view" class="space-y-20">
+            <div class="text-center mb-8 space-y-3">
+                <h1 id="store-main-title" class="text-4xl sm:text-5xl font-black text-white tracking-tight">paris-mode Store</h1>
+                <p id="store-main-desc" class="text-slate-400 text-base max-w-xl mx-auto">Explore all departments. Click any product to view details, photos, and video reviews.</p>
             </div>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-handbags-title" class="text-2xl font-bold text-indigo-400">Handbags Collection</h2></div>
-                <div id="grid-handbags" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-handbags-title" class="text-2xl font-bold text-indigo-400">Handbags Collection</h2></div>
+                <div id="grid-handbags" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-women-jackets-title" class="text-2xl font-bold text-indigo-400">Women's Jackets</h2></div>
-                <div id="grid-women_jackets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-women-jackets-title" class="text-2xl font-bold text-indigo-400">Women's Jackets</h2></div>
+                <div id="grid-women_jackets" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-women-tshirts-title" class="text-2xl font-bold text-indigo-400">Women's T-Shirts & Shirts</h2></div>
-                <div id="grid-women_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-women-tshirts-title" class="text-2xl font-bold text-indigo-400">Women's T-Shirts & Shirts</h2></div>
+                <div id="grid-women_tshirts" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400">Women's Shoes</h2></div>
-                <div id="grid-shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-shoes-title" class="text-2xl font-bold text-indigo-400">Women's Shoes</h2></div>
+                <div id="grid-shoes" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-pants-title" class="text-2xl font-bold text-indigo-400">Women's Pants</h2></div>
-                <div id="grid-pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-pants-title" class="text-2xl font-bold text-indigo-400">Women's Pants</h2></div>
+                <div id="grid-pants" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400">Women's Lingerie Collection</h2></div>
-                <div id="grid-lingerie" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-lingerie-title" class="text-2xl font-bold text-pink-400">Women's Lingerie Collection</h2></div>
+                <div id="grid-lingerie" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-jackets-title" class="text-2xl font-bold text-sky-400">Men's Jackets</h2></div>
-                <div id="grid-men_jackets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-men-jackets-title" class="text-2xl font-bold text-sky-400">Men's Jackets</h2></div>
+                <div id="grid-men_jackets" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400">Men's T-Shirts & Shirts</h2></div>
-                <div id="grid-men_tshirts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-men-tshirts-title" class="text-2xl font-bold text-sky-400">Men's T-Shirts & Shirts</h2></div>
+                <div id="grid-men_tshirts" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-pants-title" class="text-2xl font-bold text-sky-400">Men's Pants</h2></div>
-                <div id="grid-men_pants" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-men-pants-title" class="text-2xl font-bold text-sky-400">Men's Pants</h2></div>
+                <div id="grid-men_pants" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-shoes-title" class="text-2xl font-bold text-sky-400">Men's Shoes</h2></div>
-                <div id="grid-men_shoes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-men-shoes-title" class="text-2xl font-bold text-sky-400">Men's Shoes</h2></div>
+                <div id="grid-men_shoes" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-men-accessories-title" class="text-2xl font-bold text-sky-400">Men's Accessories</h2></div>
-                <div id="grid-men_accessories" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-men-accessories-title" class="text-2xl font-bold text-sky-400">Men's Accessories</h2></div>
+                <div id="grid-men_accessories" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-appliances-title" class="text-2xl font-bold text-teal-400">Home Appliances</h2></div>
-                <div id="grid-appliances" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-appliances-title" class="text-2xl font-bold text-teal-400">Home Appliances</h2></div>
+                <div id="grid-appliances" class="grid grid-cols-1 gap-10"></div>
             </section>
 
-            <section class="space-y-6">
-                <div class="border-b border-slate-800 pb-3 flex items-center justify-between"><h2 id="sec-mobiles-title" class="text-2xl font-bold text-cyan-400">Mobiles & Laptops</h2></div>
-                <div id="grid-mobiles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <section class="space-y-8">
+                <div class="border-b border-slate-800 pb-4"><h2 id="sec-mobiles-title" class="text-2xl font-bold text-cyan-400">Mobiles & Laptops</h2></div>
+                <div id="grid-mobiles" class="grid grid-cols-1 gap-10"></div>
             </section>
         </div>
 
         <!-- صفحة تفاصيل المنتج -->
         <div id="product-detail-view" class="hidden space-y-8">
-            <button id="btn-back" onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2">← Back to Store</button>
+            <button id="btn-back" onclick="goHome()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-6 py-3 rounded-2xl text-sm font-bold transition flex items-center gap-2">← Back to Store</button>
 
-            <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-12 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="space-y-4">
-                    <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700"><img id="detail-main-img" src="" alt="Product" class="w-full h-full object-cover"></div>
+                    <div class="h-[460px] bg-slate-800 rounded-2xl overflow-hidden border border-slate-700"><img id="detail-main-img" src="" alt="Product" class="w-full h-full object-cover"></div>
                     <div class="grid grid-cols-3 gap-3">
-                        <img id="detail-thumb-0" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
-                        <img id="detail-thumb-1" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
-                        <img id="detail-thumb-2" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-24 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
+                        <img id="detail-thumb-0" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-28 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
+                        <img id="detail-thumb-1" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-28 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
+                        <img id="detail-thumb-2" src="" onclick="setMainImage(this.src)" alt="Thumb" class="h-28 w-full object-cover rounded-xl border border-slate-700 cursor-pointer">
                     </div>
                     <div class="mt-6">
                         <h4 id="lbl-vid-review" class="text-xs font-bold text-indigo-400 mb-2 uppercase">Product Video Review:</h4>
-                        <div id="video-container" class="h-48 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center"></div>
+                        <div id="video-container" class="h-56 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center"></div>
                     </div>
                 </div>
 
                 <div class="space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <h1 id="detail-title" class="text-3xl sm:text-4xl font-black text-white"></h1>
+                        <h1 id="detail-title" class="text-3xl sm:text-5xl font-black text-white"></h1>
                         <div class="flex items-center gap-3">
-                            <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-4 py-2 rounded-xl text-sm font-bold border border-slate-700 flex items-center gap-2">
+                            <button onclick="toggleLike(this)" class="bg-slate-800 hover:bg-slate-700 text-pink-400 px-5 py-2.5 rounded-xl text-sm font-bold border border-slate-700 flex items-center gap-2">
                                 <span>❤️</span> <span id="like-text">Like</span> <span id="like-count" class="bg-slate-900 px-2 py-0.5 rounded-lg text-xs">24</span>
                             </button>
                         </div>
-                        <div class="space-y-2 pt-2">
+                        <div class="space-y-2 pt-4">
                             <h4 id="lbl-specs-title" class="text-xs font-bold text-indigo-400 uppercase">Specifications:</h4>
-                            <p id="detail-specs" class="text-slate-300 text-sm leading-relaxed bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60"></p>
+                            <p id="detail-specs" class="text-slate-300 text-base leading-relaxed bg-slate-800/60 p-5 rounded-2xl border border-slate-700/60"></p>
                         </div>
                     </div>
 
                     <div class="space-y-3 pt-6 border-t border-slate-800">
-                        <button id="btn-add-cart" onclick="alert('Product added to cart!')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-3.5 rounded-xl border border-slate-700 flex items-center justify-center gap-2">Add to Cart</button>
-                        <a id="detail-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-xl text-lg">Shop Now</a>
+                        <button id="btn-add-cart" onclick="alert('Product added to cart!')" class="w-full bg-slate-800 hover:bg-slate-700 text-indigo-300 font-bold py-4 rounded-2xl border border-slate-700 flex items-center justify-center gap-2">Add to Cart</button>
+                        <a id="detail-buy-btn" href="" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl shadow-xl text-lg">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -288,9 +284,9 @@
             <div class="bg-slate-900 border-2 border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
                 <h3 id="lbl-reviews-title" class="text-xl font-bold text-white flex items-center gap-2">Customer Reviews & Comments</h3>
                 <div class="space-y-3">
-                    <input type="text" id="comment-name" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white">
-                    <textarea id="comment-text" rows="3" placeholder="Write your review here..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white"></textarea>
-                    <button id="btn-post-comment" onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm">Post Review</button>
+                    <input type="text" id="comment-name" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white">
+                    <textarea id="comment-text" rows="3" placeholder="Write your review here..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white"></textarea>
+                    <button id="btn-post-comment" onclick="addComment()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-3 rounded-xl text-sm">Post Review</button>
                 </div>
                 <div id="comments-list" class="space-y-4 pt-4 border-t border-slate-800"></div>
             </div>
@@ -303,8 +299,8 @@
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></path></svg>
     </a>
 
-    <!-- التذييل (يشمل المدونات وشبكات التواصل الاجتماعي والاتصال) -->
-    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12 text-center mt-16 space-y-8">
+    <!-- التذييل -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12 text-center mt-20 space-y-8">
         <div class="max-w-4xl mx-auto px-4 space-y-6">
             <div>
                 <h4 id="footer-networks" class="text-white font-bold mb-4 tracking-wide uppercase text-xs text-indigo-400">Follow Our Networks & Blogs</h4>
@@ -314,7 +310,6 @@
                 </div>
             </div>
             
-            <!-- روابط شبكات التواصل الاجتماعي -->
             <div class="pt-2">
                 <h4 class="text-white font-bold mb-3 tracking-wide uppercase text-xs text-indigo-400">Social Media</h4>
                 <div class="flex justify-center gap-4 text-xs font-bold">
@@ -334,19 +329,19 @@
     <!-- سكربت التشغيل -->
     <script>
         const storeData = {
-            handbags: [{title: 'Luxury Leather Handbag', images: ['https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Premium genuine leather.', link: 'https://onelink.shein.com'}],
-            women_jackets: [{title: "Women's Winter Jacket", images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Warm and stylish.', link: 'https://onelink.shein.com'}],
-            women_tshirts: [{title: "Women's T-Shirts & Shirts", images: ['https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Soft cotton fabric.', link: 'https://onelink.shein.com'}],
-            shoes: [{title: 'Classic High Heels', images: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Comfortable sole.', link: 'https://onelink.shein.com'}],
-            pants: [{title: "Women's Casual Pants", images: ['https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Modern high-waist cut.', link: 'https://onelink.shein.com'}],
-            lingerie: [{title: 'Satin Lingerie Set', images: ['https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Luxurious satin fabric.', link: 'https://onelink.shein.com'}],
-            men_jackets: [{title: "Men's Winter Jacket", images: ['https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Practical for winter.', link: 'https://onelink.shein.com'}],
-            men_tshirts: [{title: "Men's T-Shirts & Shirts", images: ['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: '100% breathable cotton.', link: 'https://onelink.shein.com'}],
-            men_pants: [{title: "Men's Casual Pants", images: ['https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Durable trousers.', link: 'https://onelink.shein.com'}],
-            men_shoes: [{title: "Men's Leather Shoes", images: ['https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Sophisticated style.', link: 'https://onelink.shein.com'}],
-            men_accessories: [{title: "Men's Watch & Accessories", images: ['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Precision watch.', link: 'https://onelink.shein.com'}],
-            appliances: [{title: 'Home Kitchen Appliance', images: ['https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'High efficiency appliance.', link: 'https://onelink.shein.com'}],
-            mobiles: [{title: 'Smartphone & Laptop', images: ['https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60','https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&auto=format&fit=crop&q=60'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'High performance.', link: 'https://onelink.shein.com'}]
+            handbags: [{title: 'Luxury Leather Handbag', images: ['https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Premium genuine leather.', link: 'https://onelink.shein.com'}],
+            women_jackets: [{title: "Women's Winter Jacket", images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1551028719-00167b16eac5?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1551028719-00167b16eac5?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Warm and stylish.', link: 'https://onelink.shein.com'}],
+            women_tshirts: [{title: "Women's T-Shirts & Shirts", images: ['https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Soft cotton fabric.', link: 'https://onelink.shein.com'}],
+            shoes: [{title: 'Classic High Heels', images: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Comfortable sole.', link: 'https://onelink.shein.com'}],
+            pants: [{title: "Women's Casual Pants", images: ['https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Modern high-waist cut.', link: 'https://onelink.shein.com'}],
+            lingerie: [{title: 'Satin Lingerie Set', images: ['https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Luxurious satin fabric.', link: 'https://onelink.shein.com'}],
+            men_jackets: [{title: "Men's Winter Jacket", images: ['https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Practical for winter.', link: 'https://onelink.shein.com'}],
+            men_tshirts: [{title: "Men's T-Shirts & Shirts", images: ['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: '100% breathable cotton.', link: 'https://onelink.shein.com'}],
+            men_pants: [{title: "Men's Casual Pants", images: ['https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Durable trousers.', link: 'https://onelink.shein.com'}],
+            men_shoes: [{title: "Men's Leather Shoes", images: ['https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1533867617858-e7d97e06057e?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Sophisticated style.', link: 'https://onelink.shein.com'}],
+            men_accessories: [{title: "Men's Watch & Accessories", images: ['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'Precision watch.', link: 'https://onelink.shein.com'}],
+            appliances: [{title: 'Home Kitchen Appliance', images: ['https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'High efficiency appliance.', link: 'https://onelink.shein.com'}],
+            mobiles: [{title: 'Smartphone & Laptop', images: ['https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1200&auto=format&fit=crop&q=90','https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=1200&auto=format&fit=crop&q=90'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', specs: 'High performance.', link: 'https://onelink.shein.com'}]
         };
 
         const translations = {
@@ -392,8 +387,7 @@
                 secMenAccessories: "Men's Accessories",
                 secAppliances: 'Home Appliances',
                 secMobiles: 'Mobiles & Laptops',
-                btnDetails: 'Details',
-                viewText: 'View 3 photos & video →',
+                btnDetails: 'View Product Details',
                 btnBack: '← Back to Store',
                 lblVidReview: 'Product Video Review:',
                 like: 'Like',
@@ -449,8 +443,7 @@
                 secMenAccessories: 'قسم الإكسسوارات الرجالية',
                 secAppliances: 'قسم الأجهزة المنزلية',
                 secMobiles: 'قسم الموبايلات واللابتوبات',
-                btnDetails: 'التفاصيل',
-                viewText: 'عرض 3 صور والفيديو ←',
+                btnDetails: 'عرض تفاصيل المنتج',
                 btnBack: '← العودة إلى المتجر الرئيسي',
                 lblVidReview: 'فيديو مراجعة المنتج:',
                 like: 'إعجاب',
@@ -506,8 +499,7 @@
                 secMenAccessories: 'Accessoires pour hommes',
                 secAppliances: 'Appareils ménagers',
                 secMobiles: 'Mobiles et ordinateurs portables',
-                btnDetails: 'Détails',
-                viewText: 'Voir 3 photos et vidéo →',
+                btnDetails: 'Voir les détails',
                 btnBack: '← Retour à la boutique',
                 lblVidReview: 'Revue vidéo du produit :',
                 like: 'J’aime',
@@ -563,8 +555,7 @@
                 secMenAccessories: 'Herren-Accessoires',
                 secAppliances: 'Haushaltsgeräte',
                 secMobiles: 'Handys & Laptops',
-                btnDetails: 'Details',
-                viewText: '3 Fotos & Video anzeigen →',
+                btnDetails: 'Details anzeigen',
                 btnBack: '← Zurück zum Shop',
                 lblVidReview: 'Produktvideo-Bewertung:',
                 like: 'Gefällt mir',
@@ -620,8 +611,7 @@
                 secMenAccessories: 'Heren Accessoires',
                 secAppliances: 'Huishoudelijke Apparaten',
                 secMobiles: 'Mobieltjes & Laptops',
-                btnDetails: 'Details',
-                viewText: 'Bekijk 3 foto’s & video →',
+                btnDetails: 'Bekijk details',
                 btnBack: '← Terug naar winkel',
                 lblVidReview: 'Productvideo review:',
                 like: 'Vind ik leuk',
@@ -798,40 +788,38 @@
             const currentLang = document.getElementById('html-root').getAttribute('lang') || 'en';
             const t = translations[currentLang];
 
-            renderGrid('handbags', 'grid-handbags', t.viewText, t.btnDetails);
-            renderGrid('women_jackets', 'grid-women_jackets', t.viewText, t.btnDetails);
-            renderGrid('women_tshirts', 'grid-women_tshirts', t.viewText, t.btnDetails);
-            renderGrid('shoes', 'grid-shoes', t.viewText, t.btnDetails);
-            renderGrid('pants', 'grid-pants', t.viewText, t.btnDetails);
-            renderGrid('lingerie', 'grid-lingerie', t.viewText, t.btnDetails);
-            renderGrid('men_jackets', 'grid-men_jackets', t.viewText, t.btnDetails);
-            renderGrid('men_tshirts', 'grid-men_tshirts', t.viewText, t.btnDetails);
-            renderGrid('men_pants', 'grid-men_pants', t.viewText, t.btnDetails);
-            renderGrid('men_shoes', 'grid-men_shoes', t.viewText, t.btnDetails);
-            renderGrid('men_accessories', 'grid-men_accessories', t.viewText, t.btnDetails);
-            renderGrid('appliances', 'grid-appliances', t.viewText, t.btnDetails);
-            renderGrid('mobiles', 'grid-mobiles', t.viewText, t.btnDetails);
+            renderGrid('handbags', 'grid-handbags', t.btnDetails);
+            renderGrid('women_jackets', 'grid-women_jackets', t.btnDetails);
+            renderGrid('women_tshirts', 'grid-women_tshirts', t.btnDetails);
+            renderGrid('shoes', 'grid-shoes', t.btnDetails);
+            renderGrid('pants', 'grid-pants', t.btnDetails);
+            renderGrid('lingerie', 'grid-lingerie', t.btnDetails);
+            renderGrid('men_jackets', 'grid-men_jackets', t.btnDetails);
+            renderGrid('men_tshirts', 'grid-men_tshirts', t.btnDetails);
+            renderGrid('men_pants', 'grid-men_pants', t.btnDetails);
+            renderGrid('men_shoes', 'grid-men_shoes', t.btnDetails);
+            renderGrid('men_accessories', 'grid-men_accessories', t.btnDetails);
+            renderGrid('appliances', 'grid-appliances', t.btnDetails);
+            renderGrid('mobiles', 'grid-mobiles', t.btnDetails);
         }
 
-        function renderGrid(deptKey, gridId, viewText, detailsText) {
+        function renderGrid(deptKey, gridId, detailsText) {
             const grid = document.getElementById(gridId);
             if(!grid) return;
             grid.innerHTML = '';
             storeData[deptKey].forEach((p, index) => {
                 grid.innerHTML += `
                     <div class="card-3d-tilt bg-slate-900 border-2 border-slate-800 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between" onclick="openProduct('${deptKey}', ${index})">
-                        <div class="h-64 overflow-hidden bg-slate-800 relative">
-                            <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                        <div class="h-[520px] sm:h-[600px] overflow-hidden bg-slate-800 relative">
+                            <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex items-end p-10">
                                 <div>
-                                    <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">${deptKey}</span>
-                                    <h3 class="text-xl font-bold text-white">${p.title}</h3>
+                                    <h3 class="text-3xl sm:text-4xl font-black text-white">${p.title}</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="p-6 flex items-center justify-between">
-                            <span class="text-xs text-indigo-400 font-semibold">${viewText}</span>
-                            <span class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-xl font-bold">${detailsText}</span>
+                        <div class="p-6 flex items-center justify-end bg-slate-900">
+                            <span class="bg-indigo-600 text-white text-xs sm:text-sm px-6 py-3 rounded-2xl font-bold tracking-wider uppercase">${detailsText}</span>
                         </div>
                     </div>
                 `;
